@@ -1,0 +1,157 @@
+{
+  "site": {
+    "url": "https://srirammanikanth.dev",
+    "title": "Sriram Manikanth | Systems Architect & DevOps SRE",
+    "description": "Portfolio of Sriram Manikanth — MTS at Salesforce. Interactive demos of NextOps, Cosmic AI, SSP, and Ops-Sage: Temporal workflows, ChatOps, LLM agents, and governed GitOps.",
+    "author": "Sriram Manikanth",
+    "github": "https://github.com/Srirammkm",
+    "githubRepo": "https://github.com/Srirammkm/sriram-portfolio-resume",
+    "analyticsToken": ""
+  },
+  "profile": {
+    "name": "Sriram Manikanth",
+    "title": "MTS / Salesforce",
+    "email": "msriram0803@gmail.com",
+    "phone": "+91 7010561869",
+    "location": "Bangalore, IN",
+    "linkedin": "https://www.linkedin.com/in/sriram-manikanth-m-685323129",
+    "linkedinShort": "linkedin.com/in/sriram"
+  },
+  "summary": "Member of Technical Staff at Salesforce with 5.5+ years building production ops platforms. I architected NextOps (Slack ChatOps), Cosmic AI (manifest-driven LLM agents on Temporal), SSP (governed change execution), and Ops-Sage (alert auto-remediation) — replacing ticket queues with safe, auditable self-service. Deep in Kubernetes, Terraform, Temporal, and FinOps-aware platform design.",
+  "skills": {
+    "devops": "DevOps, CI/CD, GitOps, SRE, System Architecture, Incident Management, Cost Management Strategies, ChatOps, Incident Response, Disaster Recovery (DR).",
+    "cloud": "Kubernetes, Docker, AWS, Azure, GCP, Ansible, Chef, IBM MQ.",
+    "ai": "Large Language Models (LLM), Azure OpenAI, AI Automation, Temporal Workflows, Python, Bash Scripting.",
+    "collaboration": "Microsoft Teams, Slack, Team Collaboration Tools."
+  },
+  "experience": [
+    {
+      "company": "SALESFORCE",
+      "location": "Bangalore Urban, Karnataka",
+      "title": "Member of Technical Staff",
+      "dates": "March 2026 – Present",
+      "bullets": [
+        "Architected and built NextOps, a Slack-native ChatOps/self-service platform for automating production operations, featuring Temporal-backed workflows, a live Slack-administered RBAC engine, on-call automation, and AI-driven Root Cause Analysis.",
+        "Designed and implemented Cosmic AI, a manifest-driven AI agent platform that manages multi-tenant cloud infrastructure via natural-language Slack/Teams chat, leveraging YAML specs for auto-compilation into Temporal workers with LLM query generation and capability-level RBAC."
+      ]
+    },
+    {
+      "company": "INFORMATICA",
+      "location": "Bengaluru, Karnataka",
+      "title": "Senior DevOps Engineer",
+      "dates": "April 2024 – March 2026",
+      "bullets": [
+        "Designed and developed a scalable AI Agent Orchestration Platform, incorporating dynamic task chaining, parallel execution, intelligent data flow, and a central agent knowledge layer for improved automation accuracy and accelerated multi-step workflows.",
+        "Built Ops-Sage, an on-call alert automation system that validates incoming alerts against configured runbooks and executes remediations through the governed portal — reducing pager load for repeat failure patterns.",
+        "Developed multiple Microsoft Teams bots to support team operations and streamline incident management processes.",
+        "Created a self-service portal using Python and Temporal, enabling teams to independently run scripts and perform operational tasks, reducing reliance on DevOps/Platform support.",
+        "Automated Emergency Bug Fix (EBF) deployments, optimizing the release process and minimizing manual intervention during critical releases.",
+        "Partnered with customers to diagnose and resolve critical issues, ensuring high satisfaction and reliable service delivery.",
+        "Contributed to Disaster Recovery (DR) drills, driving process enhancements and reducing recovery times annually.",
+        "Collaborated with the FinOps team to monitor and optimize infrastructure costs, implementing cost-efficient architectures that significantly lowered cloud expenses."
+      ]
+    },
+    {
+      "company": "INFORMATICA",
+      "location": "Bengaluru, Karnataka",
+      "title": "DevOps Engineer",
+      "dates": "September 2022 – April 2024",
+      "bullets": [
+        "Led the onboarding of a multi-cloud data platform service across AWS, Azure, and GCP, optimizing data management workflows.",
+        "Collaborated with cross-functional teams to implement GitOps methodologies, enhancing version control and deployment accuracy.",
+        "Utilized Kubernetes to orchestrate containerized applications, improving scalability and resource utilization.",
+        "Engineered infrastructure as code (IaC) using Terraform to ensure consistent and repeatable environment provisioning.",
+        "Employed Chef for configuration management, automating software deployments and system configurations.",
+        "Developed Python and Bash scripts to automate routine tasks, reducing manual effort by 80%.",
+        "Played a key role in cloud migrations, ensuring minimal downtime and seamless data transition.",
+        "Swiftly addressed production incidents, performing root cause analysis and implementing corrective actions.",
+        "Contributed to the development of internal tools, streamlining team processes and enhancing productivity."
+      ]
+    },
+    {
+      "company": "THOUGHTWORKS",
+      "location": "Bangalore Urban, Karnataka",
+      "title": "Infrastructure Consultant",
+      "dates": "December 2021 – August 2022",
+      "bullets": [
+        "Implemented automation solutions using Python to streamline infrastructure management tasks.",
+        "Managed application deployments within Kubernetes environments, ensuring smooth operations and scalability.",
+        "Designed and implemented robust CI/CD pipelines to accelerate software delivery and improve release reliability.",
+        "Conducted security vulnerability checks across infrastructure to maintain high security standards.",
+        "Performed cost-cutting research for AWS cloud resources, identifying and implementing strategies to optimize expenditure."
+      ]
+    },
+    {
+      "company": "TATA CONSULTANCY SERVICES",
+      "location": "Chennai, Tamil Nadu",
+      "title": "Assistant System Engineer",
+      "dates": "August 2020 – November 2021",
+      "bullets": [
+        "Integrated CI/CD pipelines to automate build, test, and deployment processes for microservices, enhancing workflow efficiency.",
+        "Configured and managed Kubernetes clusters for container orchestration and application deployment, ensuring reliable application performance.",
+        "Automated preparation and configuration of testing platforms for IBM MQ software across cloud providers (AWS, Azure, IBM Cloud, GCP) and on-premise servers using Ansible, streamlining deployment processes.",
+        "Built microservices into Docker images, facilitating containerization and deployment."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "CHENNAI INSTITUTE OF TECHNOLOGY",
+      "location": "Chennai, Tamil Nadu",
+      "degree": "Bachelor of Engineering (BE) - Mechanical Engineering",
+      "dates": "January 2020"
+    },
+    {
+      "school": "IIPE LAXMI RAMAN HIGHER SECONDARY SCHOOL",
+      "location": "Chennai, Tamil Nadu",
+      "degree": "HSLC - Bio-Math",
+      "dates": "January 2016"
+    }
+  ],
+  "certifications": [
+    "Microsoft Certified: Azure Fundamentals (Ongoing)",
+    "Containers and Kubernetes Essentials (IBM, Ongoing)",
+    "IBM MQ Developer Essentials (IBM, Ongoing)",
+    "Certified SolidWorks Associate (Dassault Systèmes, Ongoing)",
+    "Python Programming (Various Courses, Ongoing)"
+  ],
+  "honors": [
+    {
+      "title": "Volunteer",
+      "org": "Dr. APJ Youth Club",
+      "description": "Local community empowerment campaigns and volunteer work."
+    },
+    {
+      "title": "Open Source Contribution",
+      "org": "JsonQ",
+      "description": "Contributor to JsonQ (a utility library for querying JSON data in Python/Golang).",
+      "url": "https://github.com/Srirammkm"
+    }
+  ],
+  "projects": [
+    {
+      "name": "NextOps ChatOps Platform",
+      "company": "Salesforce",
+      "url": "https://github.com/Srirammkm/sriram-portfolio-resume",
+      "description": "Slack-native production operations self-service with Temporal workflows and live RBAC.",
+      "bullets": [
+        "Event-driven workflows powered by Temporal Orchestration for reliable long-running operations.",
+        "Live Slack-administered RBAC engine enabling secure access directly in conversation.",
+        "Integrated on-call alert automation (Ops-Sage) and AI-assisted diagnostics to minimize MTTR."
+      ],
+      "tech": ["temporal", "chatops", "llm", "slack", "python"]
+    },
+    {
+      "name": "Cosmic AI Agent Platform",
+      "company": "Salesforce",
+      "url": "https://github.com/Srirammkm/sriram-portfolio-resume",
+      "description": "Manifest-driven AI agent engine for multi-tenant cloud infrastructure via chat.",
+      "bullets": [
+        "Auto-compiles YAML specification files into active Temporal workflow workers.",
+        "Generates LLM queries contextually with fine-grained capability-level RBAC for cloud safety.",
+        "Supports multi-tenant architectures, translating natural language into actionable infrastructure actions."
+      ],
+      "tech": ["llm", "temporal", "python", "kubernetes"]
+    }
+  ]
+}

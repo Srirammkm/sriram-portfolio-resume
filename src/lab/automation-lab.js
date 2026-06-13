@@ -1,285 +1,6 @@
-// ==========================================================================
-// CORE APP ENGINE: PORTFOLIO INTERACTION, SIMULATORS & PRINT (AI & ROI EDITION)
-// ==========================================================================
+import { refreshIcons } from '../icons.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Initialize Lucide icons
-  lucide.createIcons();
-
-  // Initialize core features
-  initThemeEngine();
-  initViewSwitcher();
-  initSkillFilters();
-  initClipboardUtility();
-  initPrintEngine();
-  
-  // Initialize SaaS & AI interactive features
-  initAutomationLab();
-  initLogoInteraction();
-});
-
-// ==========================================================================
-// 1. THEME ENGINE: DUAL MODE WITH FOUC RESILIENCE
-// ==========================================================================
-function initThemeEngine() {
-  const themeToggle = document.getElementById('theme-toggle');
-  if (!themeToggle) return;
-
-  const setTheme = (theme) => {
-    document.documentElement.setAttribute('data-theme', theme);
-    const metaColor = document.querySelector('meta[name="color-scheme"]');
-    if (metaColor) metaColor.content = theme;
-    localStorage.setItem('color-scheme', theme);
-  };
-
-  themeToggle.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme') || 
-                    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    const target = current === 'dark' ? 'light' : 'dark';
-    setTheme(target);
-  });
-
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    if (!localStorage.getItem('color-scheme')) {
-      const target = e.matches ? 'dark' : 'light';
-      document.documentElement.removeAttribute('data-theme');
-      const metaColor = document.querySelector('meta[name="color-scheme"]');
-      if (metaColor) metaColor.content = target;
-    }
-  });
-}
-
-// ==========================================================================
-// 2. VIEW SWITCHER: SCREEN PREVIEW MODE TOGGLE
-// ==========================================================================
-function initViewSwitcher() {
-  const viewToggle = document.getElementById('view-toggle');
-  if (!viewToggle) return;
-
-  const btnText = viewToggle.querySelector('.btn-text');
-  const btnIcon = viewToggle.querySelector('i');
-
-  viewToggle.addEventListener('click', () => {
-    const isPrintable = document.body.classList.contains('printable-active');
-    
-    if (isPrintable) {
-      document.body.classList.remove('printable-active');
-      document.body.classList.add('dashboard-active');
-      
-      if (btnText) btnText.textContent = 'ATS Print View';
-      if (btnIcon) {
-        btnIcon.setAttribute('data-lucide', 'file-text');
-        lucide.createIcons();
-      }
-    } else {
-      document.body.classList.remove('dashboard-active');
-      document.body.classList.add('printable-active');
-      
-      if (btnText) btnText.textContent = 'Dashboard View';
-      if (btnIcon) {
-        btnIcon.setAttribute('data-lucide', 'layout-dashboard');
-        lucide.createIcons();
-      }
-      window.scrollTo({ top: 0, behavior: 'instant' });
-    }
-  });
-}
-
-// ==========================================================================
-// 3. SKILL FILTERING: TIMELINE HIGHLIGHTS
-// ==========================================================================
-function initSkillFilters() {
-  const skillTags = document.querySelectorAll('.skill-tag');
-  const resetBtn = document.getElementById('reset-skills-btn');
-  const mainTimeline = document.querySelector('.timeline');
-  const jobBullets = document.querySelectorAll('.job-bullets li');
-  const techTags = document.querySelectorAll('.project-tech-stack .tech-tag');
-  
-  let activeSkill = null;
-
-  if (skillTags.length === 0) return;
-
-  const clearFilters = () => {
-    activeSkill = null;
-    skillTags.forEach(btn => btn.classList.remove('active'));
-    if (mainTimeline) mainTimeline.classList.remove('skill-filtered');
-    jobBullets.forEach(bullet => bullet.classList.remove('matching-bullet'));
-    techTags.forEach(tag => tag.classList.remove('highlighted'));
-    if (resetBtn) resetBtn.classList.add('hidden');
-  };
-
-  const applyFilter = (skillName) => {
-    activeSkill = skillName;
-
-    skillTags.forEach(btn => {
-      const match = btn.getAttribute('data-skill') === skillName;
-      btn.classList.toggle('active', match);
-    });
-
-    if (mainTimeline) mainTimeline.classList.add('skill-filtered');
-
-    jobBullets.forEach(bullet => {
-      const skillsAttr = bullet.getAttribute('data-skills') || '';
-      const skillsList = skillsAttr.split(' ');
-      const isMatch = skillsList.includes(skillName);
-      bullet.classList.toggle('matching-bullet', isMatch);
-    });
-
-    techTags.forEach(tag => {
-      const skillRef = tag.getAttribute('data-skill-highlight') || '';
-      const isMatch = skillRef === skillName;
-      tag.classList.toggle('highlighted', isMatch);
-    });
-
-    if (resetBtn) resetBtn.classList.remove('hidden');
-  };
-
-  skillTags.forEach(tag => {
-    tag.addEventListener('click', () => {
-      const skillName = tag.getAttribute('data-skill');
-      if (activeSkill === skillName) {
-        clearFilters();
-      } else {
-        applyFilter(skillName);
-      }
-    });
-  });
-
-  if (resetBtn) {
-    resetBtn.addEventListener('click', clearFilters);
-  }
-}
-
-// ==========================================================================
-// 4. PRINT UTILITY
-// ==========================================================================
-function initPrintEngine() {
-  const printBtn = document.getElementById('print-btn');
-  if (!printBtn) return;
-  printBtn.addEventListener('click', () => {
-    window.print();
-  });
-}
-
-// ==========================================================================
-// 5. CLIPBOARD EXPORTER: ATS PARSABLE PLAIN-TEXT COPY UTILITY
-// ==========================================================================
-function initClipboardUtility() {
-  const copyBtn = document.getElementById('copy-markdown-btn');
-  if (!copyBtn) return;
-
-  const markdownResume = `SRIRAM MANIKANTH
-Bangalore Urban, Karnataka 560093 | 7010561869 | msriram0803@gmail.com
-LinkedIn: www.linkedin.com/in/sriram-manikanth-m-685323129
-
-SUMMARY
-Results-oriented DevOps professional specializing in AI-driven automation and scalable infrastructure solutions. Expertise in Kubernetes and Terraform drives enhanced operational efficiency and improved deployment speed. Collaborates with cross-functional teams to deliver innovative solutions that elevate service reliability and customer satisfaction.
-
-SKILLS
-* DevOps & SRE: DevOps, CI/CD, GitOps, SRE, System Architecture, Incident Management, Cost Management Strategies, ChatOps, Incident Response, Disaster Recovery (DR).
-* Cloud & Platforms: Kubernetes, Docker, AWS, Azure, GCP, Ansible, Chef, IBM MQ.
-* AI & Automation: Large Language Models (LLM), Azure OpenAI, AI Automation, Temporal Workflows, Python, Bash Scripting.
-* Collaboration: Microsoft Teams, Slack, Team Collaboration Tools.
-
-EXPERIENCE
-
-SALESFORCE - Bangalore Urban, Karnataka
-Member of Technical Staff | March 2026 – Present
-* Architected and built NextOps, a Slack-native ChatOps/self-service platform for automating production operations, featuring Temporal-backed workflows, a live Slack-administered RBAC engine, on-call automation, and AI-driven Root Cause Analysis.
-* Designed and implemented Cosmic AI, a manifest-driven AI agent platform that manages multi-tenant cloud infrastructure via natural-language Slack/Teams chat, leveraging YAML specs for auto-compilation into Temporal workers with LLM query generation and capability-level RBAC.
-
-INFORMATICA - Bengaluru, Karnataka
-Senior DevOps Engineer | April 2024 – March 2026
-* Designed and developed a scalable AI Agent Orchestration Platform, incorporating dynamic task chaining, parallel execution, intelligent data flow, and a central agent knowledge layer for improved automation accuracy and accelerated multi-step workflows.
-* Built an in-house AI-powered Incident Assistant Tool for proactive incident prevention and support, and an AI-driven Root Cause Analysis (RCA) Tool to enhance issue identification and resolution.
-* Developed multiple Microsoft Teams bots to support team operations and streamline incident management processes.
-* Created a self-service portal using Python and Temporal, enabling teams to independently run scripts and perform operational tasks, reducing reliance on DevOps/Platform support.
-* Automated Emergency Bug Fix (EBF) deployments, optimizing the release process and achieving a 50% increase in deployment speed by minimizing manual intervention.
-* Partnered with customers to diagnose and resolve critical issues, ensuring high satisfaction and reliable service delivery.
-* Contributed to Disaster Recovery (DR) drills, driving process enhancements and reducing recovery times annually.
-* Collaborated with the FinOps team to monitor and optimize infrastructure costs, implementing cost-efficient architectures that significantly lowered cloud expenses.
-
-INFORMATICA - Bengaluru, Karnataka
-DevOps Engineer | September 2022 – April 2024
-* Led the onboarding of a multi-cloud data platform service across AWS, Azure, and GCP, optimizing data management workflows.
-* Collaborated with cross-functional teams to implement GitOps methodologies, enhancing version control and deployment accuracy.
-* Utilized Kubernetes to orchestrate containerized applications, improving scalability and resource utilization.
-* Engineered infrastructure as code (IaC) using Terraform to ensure consistent and repeatable environment provisioning.
-* Employed Chef for configuration management, automating software deployments and system configurations.
-* Developed Python and Bash scripts to automate routine tasks, reducing manual effort by 80%.
-* Played a key role in cloud migrations, ensuring minimal downtime and seamless data transition.
-* Swiftly addressed production incidents, performing root cause analysis and implementing corrective actions.
-* Contributed to the development of internal tools, streamlining team processes and enhancing productivity.
-
-THOUGHTWORKS - Bangalore Urban, Karnataka
-Infrastructure Consultant | December 2021 – August 2022
-* Implemented automation solutions using Python to streamline infrastructure management tasks.
-* Managed application deployments within Kubernetes environments, ensuring smooth operations and scalability.
-* Designed and implemented robust CI/CD pipelines to accelerate software delivery and improve release reliability.
-* Conducted security vulnerability checks across infrastructure to maintain high security standards.
-* Performed cost-cutting research for AWS cloud resources, identifying and implementing strategies to optimize expenditure.
-
-TATA CONSULTANCY SERVICES - Chennai, Tamil Nadu
-Assistant System Engineer | August 2020 – November 2021
-* Integrated CI/CD pipelines to automate build, test, and deployment processes for microservices, enhancing workflow efficiency.
-* Configured and managed Kubernetes clusters for container orchestration and application deployment, ensuring reliable application performance.
-* Automated preparation and configuration of testing platforms for IBM MQ software across cloud providers (AWS, Azure, IBM Cloud, GCP) and on-premise servers using Ansible and various tools, streamlining deployment processes.
-* Built microservices into Docker images, facilitating containerization and deployment.
-
-EDUCATION
-
-CHENNAI INSTITUTE OF TECHNOLOGY - Chennai, Tamil Nadu
-Bachelor of Engineering (BE) - Mechanical Engineering | January 2020
-
-IIPE LAXMI RAMAN HIGHER SECONDARY SCHOOL - Chennai, Tamil Nadu
-HSLC - Bio-Math | January 2016
-
-CERTIFICATIONS
-* Microsoft Certified: Azure Fundamentals (Ongoing)
-* Containers and Kubernetes Essentials (IBM, Ongoing)
-* IBM MQ Developer Essentials (IBM, Ongoing)
-* Certified SolidWorks Associate (Dassault Systèmes, Ongoing)
-* Python Programming (Various Courses, Ongoing)
-
-ACTIVITIES & HONORS
-* Volunteer: Dr. APJ Youth Club (Local community empowerment campaigns and volunteer work).
-* Open Source Contribution: Contributor to JsonQ (a utility library for querying JSON data in Python/Golang).`;
-
-  const btnText = copyBtn.querySelector('.btn-text');
-  const btnIcon = copyBtn.querySelector('i');
-
-  copyBtn.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(markdownResume);
-      
-      if (btnText) btnText.textContent = 'Copied';
-      if (btnIcon) {
-        btnIcon.setAttribute('data-lucide', 'check');
-        lucide.createIcons();
-      }
-      copyBtn.classList.remove('btn-secondary');
-      copyBtn.classList.add('btn-primary');
-
-      setTimeout(() => {
-        if (btnText) btnText.textContent = 'Copy ATS Text';
-        if (btnIcon) {
-          btnIcon.setAttribute('data-lucide', 'copy');
-          lucide.createIcons();
-        }
-        copyBtn.classList.remove('btn-primary');
-        copyBtn.classList.add('btn-secondary');
-      }, 2000);
-      
-    } catch (err) {
-      console.error('Failed to copy text: ', err);
-    }
-  });
-}
-
-// ==========================================================================
-// 6. DEVOPS/AI AUTOMATION LAB INTEGRATED SUITE ORCHESTRATOR
-// ==========================================================================
-function initAutomationLab() {
+export function initAutomationLab() {
   // === Fullscreen Immersive Mode Controller ===
   const fullscreenBtn = document.getElementById('lab-fullscreen-btn');
   const labContainer = document.getElementById('interactive-lab');
@@ -301,7 +22,7 @@ function initAutomationLab() {
         fullscreenBtn.innerHTML = '<i data-lucide="minimize-2"></i> <span>Exit Fullscreen</span>';
       }
     }
-    lucide.createIcons();
+    refreshIcons();
     window.dispatchEvent(new Event('resize'));
   }
 
@@ -503,7 +224,7 @@ function initAutomationLab() {
 
     slackOpsFeed.prepend(card);
     slackOpsFeed.scrollTop = 0;
-    lucide.createIcons();
+    refreshIcons();
 
     const progressLabel = card.querySelector('.slack-progress-label');
     const progressFill = card.querySelector('.progress-bar-fill');
@@ -533,7 +254,7 @@ function initAutomationLab() {
         progressFill.style.width = '100%';
         logsContainer.innerHTML += `\n[00:00:0${logSteps.length + 1}] Workflow ${wfId} committed successfully.`;
         auditNote?.classList.remove('hidden');
-        lucide.createIcons();
+        refreshIcons();
         clearInterval(interval);
         addWorkflowToHistory(title, '3.0s');
       }
@@ -721,7 +442,7 @@ function initAutomationLab() {
     `;
     slackOpsFeed.appendChild(card);
     slackOpsFeed.scrollTop = slackOpsFeed.scrollHeight;
-    lucide.createIcons();
+    refreshIcons();
 
     const logConsole = card.querySelector('.slack-card-logs');
     const statusPill = card.querySelector('.status-pill');
@@ -764,7 +485,7 @@ function initAutomationLab() {
     `;
     sreagentChatFeed.appendChild(row);
     sreagentChatFeed.scrollTop = sreagentChatFeed.scrollHeight;
-    lucide.createIcons();
+    refreshIcons();
     return row;
   }
 
@@ -781,7 +502,7 @@ function initAutomationLab() {
     `;
     sreagentChatFeed.appendChild(typingRow);
     sreagentChatFeed.scrollTop = sreagentChatFeed.scrollHeight;
-    lucide.createIcons();
+    refreshIcons();
     return typingRow;
   }
 
@@ -971,7 +692,7 @@ function initAutomationLab() {
           const cardDiv = document.createElement('div');
           cardDiv.innerHTML = data.html;
           bodyEl.appendChild(cardDiv);
-          lucide.createIcons();
+          refreshIcons();
 
           if (promptId === 'a') {
             const nodes = cardDiv.querySelectorAll('.tree-node');
@@ -1196,7 +917,7 @@ function initAutomationLab() {
       iconEl.style.backgroundColor = '#dc2626';
       iconEl.style.borderColor = '#dc2626';
     }
-    lucide.createIcons();
+    refreshIcons();
   }
 
   function resetSSPStepper() {
@@ -1449,7 +1170,7 @@ function initAutomationLab() {
         }
 
         document.getElementById('govportal-btn-restart-demo')?.addEventListener('click', resetSSPStepper);
-        lucide.createIcons();
+        refreshIcons();
       }, 1500);
     }, 1500);
   });
@@ -1490,7 +1211,7 @@ function initAutomationLab() {
       </div>
     `;
     govportalViewSlack.appendChild(rollbackDiv);
-    lucide.createIcons();
+    refreshIcons();
 
     const lines = [
       "[gitops] Reverting configuration pull request...",
@@ -1681,68 +1402,4 @@ function initAutomationLab() {
       setTimeout(runStep, 300);
     });
   });
-}
-
-// ==========================================================================
-// 11. INTERACTIVE LOGO TERMINAL SIMULATOR
-// ==========================================================================
-function initLogoInteraction() {
-  const statusText = document.getElementById('logo-status-text');
-  if (!statusText) return;
-
-  const statuses = [
-    { text: 'ai_systems', type: 'success' },
-    { text: 'agent_orchestration', type: 'active' },
-    { text: 'llms_and_agents', type: 'success' },
-    { text: 'temporal_workflows', type: 'active' },
-    { text: 'kubernetes', type: 'active' },
-    { text: 'terraform', type: 'active' },
-    { text: 'ai_automation', type: 'success' },
-    { text: 'chatops', type: 'success' },
-    { text: 'devops_sre', type: 'success' }
-  ];
-
-  let currentIndex = 0;
-
-  const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
-  const runTypingCycle = async () => {
-    // Show initial word 'ready' for 1 second
-    await sleep(1000);
-
-    while (true) {
-      // 1. Determine next status
-      currentIndex = (currentIndex + 1) % statuses.length;
-      const targetStatus = statuses[currentIndex];
-      
-      // 2. Backspace current text
-      statusText.className = 'logo-status status-active'; // Amber color during typing
-      let currentText = statusText.textContent;
-      while (currentText.length > 0) {
-        currentText = currentText.slice(0, -1);
-        statusText.textContent = currentText;
-        await sleep(20); // Fast delete
-      }
-
-      await sleep(80);
-
-      // 3. Type target text
-      let targetText = targetStatus.text;
-      for (let i = 0; i < targetText.length; i++) {
-        statusText.textContent += targetText[i];
-        await sleep(35); // Fast type
-      }
-
-      // 4. Set final status class
-      statusText.className = 'logo-status';
-      if (targetStatus.type === 'active') {
-        statusText.classList.add('status-active');
-      }
-
-      // 5. Show for 1 second
-      await sleep(1000);
-    }
-  };
-
-  runTypingCycle();
 }

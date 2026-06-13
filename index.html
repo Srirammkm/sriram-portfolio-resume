@@ -2,20 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
   
-  <!-- SEO Meta Tags -->
   <title>Sriram Manikanth | Systems Architect & DevOps SRE</title>
-  <meta name="description" content="Professional portfolio of Sriram Manikanth, a systems architect and DevOps SRE specializing in AI-driven automation, Kubernetes, Terraform, and Temporal workflows.">
+  <meta name="description" content="Portfolio of Sriram Manikanth — MTS at Salesforce. Interactive demos of NextOps, Cosmic AI, SSP, and Ops-Sage: Temporal workflows, ChatOps, LLM agents, and governed GitOps.">
   <meta name="author" content="Sriram Manikanth">
+  <link rel="canonical" href="https://srirammanikanth.dev/">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://srirammanikanth.dev/">
+  <meta property="og:title" content="Sriram Manikanth | Systems Architect & DevOps SRE">
+  <meta property="og:description" content="Interactive portfolio with live demos of production ops platforms — NextOps ChatOps, Cosmic AI agents, SSP change execution, and Ops-Sage remediation.">
+  <meta property="og:image" content="https://srirammanikanth.dev/assets/profile.jpg">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sriram Manikanth | Systems Architect & DevOps SRE">
+  <meta name="twitter:description" content="Interactive portfolio with live demos of production ops platforms built at Salesforce and Informatica.">
+  <meta name="twitter:image" content="https://srirammanikanth.dev/assets/profile.jpg">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/profile.jpg">
   
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Geist:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   
-  <!-- FOUC Prevention Script -->
   <script>
     {
       const colorScheme = localStorage.getItem("color-scheme");
@@ -26,12 +40,11 @@
     }
   </script>
   
-  <!-- Icons (Lucide Icons via CDN) -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body class="dashboard-active">
+
+  <a class="skip-link" href="#dashboard-view">Skip to main content</a>
 
   <!-- Floating Navigation Controls -->
   <nav id="nav-controls" aria-label="Resume controls">
@@ -83,7 +96,14 @@
       <section class="panel profile-panel" aria-label="Profile Info">
         <div class="profile-header-saas">
           <div class="avatar-saas">
-            <span class="avatar-initials">SM</span>
+            <img
+              src="/assets/profile.jpg"
+              alt="Sriram Manikanth"
+              class="avatar-photo"
+              width="52"
+              height="52"
+              loading="eager"
+            />
           </div>
           <div class="profile-name-group">
             <h1 class="profile-name">Sriram Manikanth</h1>
@@ -111,8 +131,20 @@
           </div>
           <div class="metadata-row">
             <span class="meta-label">LINKEDIN</span>
-            <a href="https://www.linkedin.com/in/sriram-manikanth-m-685323129" class="meta-val" target="_blank" rel="noopener">linkedin.com/in/sriram</a>
+            <a href="https://www.linkedin.com/in/sriram-manikanth-m-685323129" class="meta-val" target="_blank" rel="noopener noreferrer">linkedin.com/in/sriram</a>
           </div>
+        </div>
+        <div class="profile-cta-row">
+          <a href="mailto:msriram0803@gmail.com" class="btn btn-primary profile-cta-btn">
+            <i data-lucide="mail"></i>
+            <span>Contact Me</span>
+          </a>
+          <a href="https://github.com/Srirammkm" class="btn btn-secondary profile-cta-btn" target="_blank" rel="noopener noreferrer">
+            <svg class="btn-icon-svg" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.82V22"/>
+            </svg>
+            <span>GitHub</span>
+          </a>
         </div>
       </section>
 
@@ -202,9 +234,7 @@
       <section class="panel intro-panel" aria-labelledby="summary-title">
         <h2 id="summary-title" class="panel-title"><i data-lucide="user"></i> Executive Summary</h2>
         <p class="summary-paragraph">
-          Results-oriented DevOps professional specializing in AI-driven automation and scalable infrastructure solutions. 
-          Expertise in Kubernetes and Terraform drives enhanced operational efficiency and improved deployment speed. 
-          Collaborates with cross-functional teams to deliver innovative, high-impact solutions (such as ChatOps platforms and manifest-driven AI agents) that elevate service reliability, optimize cloud spend, and drive corporate ROI by automating complex systems operations.
+          Member of Technical Staff at Salesforce with 5.5+ years building production ops platforms. I architected NextOps (Slack ChatOps), Cosmic AI (manifest-driven LLM agents on Temporal), SSP (governed change execution), and Ops-Sage (alert auto-remediation) — replacing ticket queues with safe, auditable self-service. Deep in Kubernetes, Terraform, Temporal, and FinOps-aware platform design.
         </p>
       </section>
 
@@ -222,28 +252,28 @@
               These are not concept slides — they are interactive replicas of the systems I delivered in production. Explore how I combine Slack-native ChatOps, Temporal orchestration, LLM agents, and governed GitOps to replace ticket queues with safe, auditable self-service.
             </p>
             <ul class="lab-promo-products" aria-label="Featured production systems">
-              <li class="lab-promo-product" style="--product-accent: #4f46e5;">
+              <li class="lab-promo-product">
                 <i data-lucide="bot"></i>
                 <div>
                   <strong>NextOps</strong>
                   <span>Self-service prod ops from Slack — RBAC, runbooks, on-call automation</span>
                 </div>
               </li>
-              <li class="lab-promo-product" style="--product-accent: #7c3aed;">
+              <li class="lab-promo-product">
                 <i data-lucide="sparkles"></i>
                 <div>
                   <strong>Cosmic AI</strong>
                   <span>YAML-defined agents that run infra actions via natural language</span>
                 </div>
               </li>
-              <li class="lab-promo-product" style="--product-accent: #059669;">
+              <li class="lab-promo-product">
                 <i data-lucide="shield-check"></i>
                 <div>
                   <strong>SSP</strong>
                   <span>JIRA + CAB approvals wired into GitOps change execution</span>
                 </div>
               </li>
-              <li class="lab-promo-product" style="--product-accent: #d97706;">
+              <li class="lab-promo-product">
                 <i data-lucide="git-pull-request"></i>
                 <div>
                   <strong>Ops-Sage</strong>
@@ -293,16 +323,16 @@
               <button class="lab-nav-item active" data-product="overview" role="tab" aria-selected="true">
                 <i data-lucide="layout-dashboard"></i> Overview
               </button>
-              <button class="lab-nav-item" data-product="slackops" style="--product-accent: #4f46e5;" role="tab" aria-selected="false">
+              <button class="lab-nav-item" data-product="slackops" role="tab" aria-selected="false">
                 <i data-lucide="bot"></i> NextOps Bot
               </button>
-              <button class="lab-nav-item" data-product="sreagent" style="--product-accent: #7c3aed;" role="tab" aria-selected="false">
+              <button class="lab-nav-item" data-product="sreagent" role="tab" aria-selected="false">
                 <i data-lucide="sparkles"></i> Cosmic AI
               </button>
-              <button class="lab-nav-item" data-product="govportal" style="--product-accent: #059669;" role="tab" aria-selected="false">
+              <button class="lab-nav-item" data-product="govportal" role="tab" aria-selected="false">
                 <i data-lucide="shield-check"></i> SSP
               </button>
-              <button class="lab-nav-item" data-product="rcagen" style="--product-accent: #d97706;" role="tab" aria-selected="false">
+              <button class="lab-nav-item" data-product="rcagen" role="tab" aria-selected="false">
                 <i data-lucide="bell-ring"></i> Ops-Sage
               </button>
             </nav>
@@ -332,7 +362,7 @@
               </header>
 
               <div class="overview-grid overview-grid--showcase">
-                <article class="overview-card showcase-card" data-card-product="slackops" style="--card-accent: #4f46e5;">
+                <article class="overview-card showcase-card" data-card-product="slackops">
                   <div class="showcase-card-meta">
                     <span class="showcase-card-phase">02 · ChatOps</span>
                     <span class="showcase-card-impact">Self-service in seconds</span>
@@ -348,7 +378,7 @@
                   <span class="showcase-card-cta">Open demo <i data-lucide="arrow-right"></i></span>
                 </article>
 
-                <article class="overview-card showcase-card" data-card-product="sreagent" style="--card-accent: #7c3aed;">
+                <article class="overview-card showcase-card" data-card-product="sreagent">
                   <div class="showcase-card-meta">
                     <span class="showcase-card-phase">02 · ChatOps</span>
                     <span class="showcase-card-impact">Natural-language infra ops</span>
@@ -364,7 +394,7 @@
                   <span class="showcase-card-cta">Open demo <i data-lucide="arrow-right"></i></span>
                 </article>
 
-                <article class="overview-card showcase-card" data-card-product="govportal" style="--card-accent: #059669;">
+                <article class="overview-card showcase-card" data-card-product="govportal">
                   <div class="showcase-card-meta">
                     <span class="showcase-card-phase">03 · Govern</span>
                     <span class="showcase-card-impact">JIRA + CAB wired to GitOps</span>
@@ -380,7 +410,7 @@
                   <span class="showcase-card-cta">Open demo <i data-lucide="arrow-right"></i></span>
                 </article>
 
-                <article class="overview-card showcase-card" data-card-product="rcagen" style="--card-accent: #d97706;">
+                <article class="overview-card showcase-card" data-card-product="rcagen">
                   <div class="showcase-card-meta">
                     <span class="showcase-card-phase">05 · Respond</span>
                     <span class="showcase-card-impact">On-call relief in seconds</span>
@@ -412,20 +442,20 @@
             </div>
 
             <!-- PANE 1: NextOps Bot -->
-            <div class="lab-pane" id="pane-slackops" style="--accent-color: #4f46e5;">
+            <div class="lab-pane" id="pane-slackops">
               <div class="product-header">
                 <div class="product-header-info">
                   <h2>NextOps Bot</h2>
                   <span class="product-badge-accent">Secure Self-Service</span>
                 </div>
                 <div class="product-tabs" role="tablist">
-                  <button class="product-tab-btn active" data-subtab="overview">Overview</button>
-                  <button class="product-tab-btn product-tab-btn--demo" data-subtab="try-live"><i data-lucide="play"></i> Try it live</button>
+                  <button class="product-tab-btn" data-subtab="overview">Overview</button>
+                  <button class="product-tab-btn product-tab-btn--demo active" data-subtab="try-live"><i data-lucide="play"></i> Try it live</button>
                 </div>
               </div>
 
               <!-- Sub-tab contents -->
-              <div class="product-subpane active" data-subpane-id="overview">
+              <div class="product-subpane" data-subpane-id="overview">
                 <div class="product-hero-desc">
                   <h3>What it is / Why it matters</h3>
                   <p>A Slack bot that lets engineers and support staff safely run production operations on the CloudStack platform — provision database users, kill stuck jobs, toggle features, and triage incidents — all from Slack, with role-based access and a full audit trail. No direct production access required.</p>
@@ -441,7 +471,7 @@
                 </div>
               </div>
 
-              <div class="product-subpane" data-subpane-id="try-live">
+              <div class="product-subpane active" data-subpane-id="try-live">
                 <div class="console-playground-container">
                   <!-- Console Sidebar -->
                   <div class="console-sidebar">
@@ -915,20 +945,20 @@
             </div>
 
             <!-- PANE 2: Cosmic AI -->
-            <div class="lab-pane" id="pane-sreagent" style="--accent-color: #7c3aed;">
+            <div class="lab-pane" id="pane-sreagent">
               <div class="product-header">
                 <div class="product-header-info">
                   <h2>Cosmic AI</h2>
                   <span class="product-badge-accent">Autonomous agent</span>
                 </div>
                 <div class="product-tabs" role="tablist">
-                  <button class="product-tab-btn active" data-subtab="overview">Overview</button>
-                  <button class="product-tab-btn product-tab-btn--demo" data-subtab="try-live"><i data-lucide="play"></i> Try it live</button>
+                  <button class="product-tab-btn" data-subtab="overview">Overview</button>
+                  <button class="product-tab-btn product-tab-btn--demo active" data-subtab="try-live"><i data-lucide="play"></i> Try it live</button>
                 </div>
               </div>
 
               <!-- Sub-tab contents -->
-              <div class="product-subpane active" data-subpane-id="overview">
+              <div class="product-subpane" data-subpane-id="overview">
                 <div class="product-hero-desc">
                   <h3>What it is / Why it matters</h3>
                   <p>An AI-powered "senior SRE" that lives in Slack. Talk to it in plain English about any infrastructure or incident problem and it investigates, reasons step-by-step, runs the right operations, and remembers everything — available 24/7. Powered by GPT-5.</p>
@@ -944,7 +974,7 @@
                 </div>
               </div>
 
-              <div class="product-subpane" data-subpane-id="try-live">
+              <div class="product-subpane active" data-subpane-id="try-live">
                 <div class="console-playground-container">
                   <!-- Console Sidebar -->
                   <div class="console-sidebar">
@@ -1054,20 +1084,20 @@
             </div>
 
             <!-- PANE 3: SSP -->
-            <div class="lab-pane" id="pane-govportal" style="--accent-color: #059669;">
+            <div class="lab-pane" id="pane-govportal">
               <div class="product-header">
                 <div class="product-header-info">
                   <h2>SSP</h2>
                   <span class="product-badge-accent">Governed Self-Service</span>
                 </div>
                 <div class="product-tabs" role="tablist">
-                  <button class="product-tab-btn active" data-subtab="overview">Overview</button>
-                  <button class="product-tab-btn product-tab-btn--demo" data-subtab="try-live"><i data-lucide="play"></i> Try it live</button>
+                  <button class="product-tab-btn" data-subtab="overview">Overview</button>
+                  <button class="product-tab-btn product-tab-btn--demo active" data-subtab="try-live"><i data-lucide="play"></i> Try it live</button>
                 </div>
               </div>
 
               <!-- Sub-tab contents -->
-              <div class="product-subpane active" data-subpane-id="overview">
+              <div class="product-subpane" data-subpane-id="overview">
                 <div class="product-hero-desc">
                   <h3>What it is / Why it matters</h3>
                   <p>The governed automation engine behind the scenes. Every operational action is validated, gets a JIRA change ticket, waits for the right approvals (Change Advisory Board), then executes against production and notifies everyone — fully audited, every time.</p>
@@ -1083,7 +1113,7 @@
                 </div>
               </div>
 
-              <div class="product-subpane" data-subpane-id="try-live">
+              <div class="product-subpane active" data-subpane-id="try-live">
                 <div class="govportal-split-layout">
                   <!-- Left side: Stepper progress -->
                   <div class="govportal-stepper-panel">
@@ -1302,19 +1332,19 @@
             </div>
 
             <!-- PANE 4: Ops-Sage -->
-            <div class="lab-pane" id="pane-rcagen" style="--accent-color: #d97706;">
+            <div class="lab-pane" id="pane-rcagen">
               <div class="product-header">
                 <div class="product-header-info">
                   <h2>Ops-Sage</h2>
                   <span class="product-badge-accent">On-Call Alert Automation</span>
                 </div>
                 <div class="product-tabs" role="tablist">
-                  <button class="product-tab-btn active" data-subtab="overview">Overview</button>
-                  <button class="product-tab-btn product-tab-btn--demo" data-subtab="try-live"><i data-lucide="play"></i> Try it live</button>
+                  <button class="product-tab-btn" data-subtab="overview">Overview</button>
+                  <button class="product-tab-btn product-tab-btn--demo active" data-subtab="try-live"><i data-lucide="play"></i> Try it live</button>
                 </div>
               </div>
 
-              <div class="product-subpane active" data-subpane-id="overview">
+              <div class="product-subpane" data-subpane-id="overview">
                 <div class="product-hero-desc">
                   <h3>What it is / Why it matters</h3>
                   <p>Ops-Sage watches incoming on-call alerts and acts on them automatically. For each alert type you configure a validation checklist and an approved remediation action. When an alert fires, Ops-Sage validates the signal against live context, runs the action through the governed SSP engine if checks pass, and only escalates to a human when validation fails — removing pager fatigue for known failure patterns.</p>
@@ -1330,7 +1360,7 @@
                 </div>
               </div>
 
-              <div class="product-subpane" data-subpane-id="try-live">
+              <div class="product-subpane active" data-subpane-id="try-live">
                 <div class="rcagen-tabs-bar">
                   <button class="rcagen-tab-btn active" data-rcagen-tab="alert-feed">Live Alert Feed</button>
                   <button class="rcagen-tab-btn" data-rcagen-tab="action-log">Action Log</button>
@@ -1435,21 +1465,21 @@
                 <div class="rcagen-content-pane" id="rcagen-tab-runbook-config">
                   <p class="sandbox-intro">Each alert type maps to validation checks and an approved action. Ops-Sage only escalates when a check fails.</p>
                   <div class="overview-grid overview-grid--showcase">
-                    <div class="showcase-card" style="--card-accent: #d97706; cursor: default;">
+                    <div class="showcase-card" style="cursor: default;">
                       <div class="showcase-card-meta">
                         <span class="showcase-card-phase">heap-scale-v2</span>
                         <span class="showcase-card-impact">JVM heap &gt; 90%</span>
                       </div>
                       <p class="showcase-card-desc"><strong>Validate:</strong> confirm single pod spike, no active deploy, heap trend &gt; 5 min.<br><strong>Action:</strong> apply JVM heap multiplier via SSP workflow.</p>
                     </div>
-                    <div class="showcase-card" style="--card-accent: #d97706; cursor: default;">
+                    <div class="showcase-card" style="cursor: default;">
                       <div class="showcase-card-meta">
                         <span class="showcase-card-phase">conn-pool-scale</span>
                         <span class="showcase-card-impact">Latency p99 high</span>
                       </div>
                       <p class="showcase-card-desc"><strong>Validate:</strong> DB pool at capacity, no Sev-1 open.<br><strong>Action:</strong> scale connection pool ConfigMap + rolling restart.</p>
                     </div>
-                    <div class="showcase-card" style="--card-accent: #d97706; cursor: default;">
+                    <div class="showcase-card" style="cursor: default;">
                       <div class="showcase-card-meta">
                         <span class="showcase-card-phase">log-rotate-sweep</span>
                         <span class="showcase-card-impact">Disk &gt; 85%</span>
@@ -1475,9 +1505,7 @@
             <div class="project-header">
               <h3 class="project-name">NextOps ChatOps Platform</h3>
               <span class="project-tag">
-                <svg class="project-company-logo logo-salesforce" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                  <path fill="#039be5" d="M36.5,12c-1.326,0-2.59,0.256-3.758,0.705C31.321,10.48,28.836,9,26,9c-2.107,0-4.018,0.821-5.447,2.152C18.815,9.221,16.303,8,13.5,8C8.253,8,4,12.253,4,17.5c0,0.792,0.108,1.558,0.29,2.293C2.291,21.349,1,23.771,1,26.5C1,31.194,4.806,35,9.5,35c0.413,0,0.816-0.039,1.214-0.096C12.027,37.903,15.017,40,18.5,40c3.162,0,5.916-1.731,7.38-4.293C26.556,35.893,27.265,36,28,36c2.62,0,4.938-1.265,6.398-3.211C35.077,32.927,35.78,33,36.5,33C42.299,33,47,28.299,47,22.5C47,16.701,42.299,12,36.5,12z"></path><path fill="#fff" d="M15.823 25c.045 0 .076-.037.076-.083C15.899 24.963 15.867 25 15.823 25L15.823 25zM21.503 23.934c.024 0 .047.008.055.013-.008-.005-.03-.013-.053-.013C21.504 23.933 21.503 23.934 21.503 23.934zM7.138 23.93c.023 0 .045.008.058.016-.013-.007-.034-.017-.056-.017C7.139 23.929 7.138 23.93 7.138 23.93zM24.126 21.909c-.016.039-.046.045-.072.043.004.001.004.003.009.003C24.086 21.954 24.112 21.944 24.126 21.909zM15.823 19c.045 0 .076.037.076.082C15.899 19.037 15.867 19 15.823 19L15.823 19zM21.359 22.185L21.359 22.185c0 .408.211.662.506.835C21.569 22.847 21.359 22.594 21.359 22.185zM38.126 24.729c.025.061-.032.087-.032.087S38.151 24.79 38.126 24.729zM8.558 21L8.558 21c.253 0 .503.034.733.093C9.061 21.034 8.811 21 8.558 21zM9.764 21.909c-.016.039-.046.045-.072.043.004.001.004.003.009.003C9.725 21.954 9.75 21.944 9.764 21.909zM35.195 24.164c.065.106.142.203.229.293s.185.169.294.237c-.109-.068-.207-.147-.294-.237C35.337 24.368 35.261 24.27 35.195 24.164zM37.83 21.797c-.012 0-.026-.002-.026-.002s.01.004.024.004C37.828 21.799 37.829 21.797 37.83 21.797zM37.832 24.189c0 0 .017-.003.034-.004-.001 0-.001-.001-.002-.001C37.846 24.184 37.832 24.189 37.832 24.189z"></path><path fill="#fff" d="M6.885 24.462c-.029.07.01.084.02.096.087.058.174.1.262.146C7.636 24.933 8.08 25 8.543 25c.944 0 1.53-.462 1.53-1.207v-.014c0-.689-.662-.939-1.282-1.12L8.71 22.635c-.468-.14-.871-.261-.871-.545v-.014c0-.243.236-.422.602-.422.406 0 .888.125 1.199.283 0 0 .092.054.125-.027.018-.044.175-.434.192-.476.018-.045-.014-.08-.046-.098C9.555 21.136 9.065 21 8.558 21l-.094.001c-.864 0-1.467.481-1.467 1.17v.014c0 .726.665.962 1.289 1.126l.1.029c.454.128.846.239.846.533v.015c0 .269-.255.47-.665.47-.16 0-.667-.002-1.216-.322C7.285 24 7.247 23.975 7.196 23.946c-.027-.016-.095-.042-.124.039L6.885 24.462zM21.247 24.462c-.029.07.01.084.02.096.087.058.174.1.262.146C21.998 24.933 22.442 25 22.905 25c.944 0 1.53-.462 1.53-1.207v-.014c0-.689-.662-.939-1.282-1.12l-.081-.024c-.468-.14-.871-.261-.871-.545v-.014c0-.243.236-.422.602-.422.406 0 .888.125 1.199.283 0 0 .092.054.125-.027.018-.044.175-.434.192-.476.018-.045-.014-.08-.046-.098C23.917 21.136 23.427 21 22.92 21l-.094.001c-.864 0-1.467.481-1.467 1.17v.014c0 .726.666.962 1.289 1.126l.1.029c.454.128.846.239.846.533v.015c0 .269-.255.47-.665.47-.16 0-.667-.002-1.216-.322-.066-.036-.105-.06-.155-.09-.017-.01-.097-.039-.124.039L21.247 24.462zM31.465 22.219c-.077-.243-.198-.457-.358-.635-.16-.179-.364-.322-.605-.426C30.261 21.053 29.977 21 29.658 21c-.32 0-.604.053-.845.157s-.444.248-.604.427c-.161.178-.281.392-.358.634-.077.241-.116.505-.116.785s.039.544.116.785c.077.242.197.456.358.635.16.179.364.322.605.423S29.338 25 29.658 25c.319 0 .602-.051.844-.153.241-.102.444-.245.605-.423.16-.178.281-.392.358-.635.077-.241.116-.505.116-.785C31.581 22.724 31.542 22.46 31.465 22.219M30.677 23.004c0 .423-.085.758-.253.993-.166.233-.417.347-.767.347s-.6-.114-.763-.347c-.166-.236-.249-.57-.249-.993s.084-.756.249-.99c.164-.231.414-.343.764-.343s.6.112.767.343C30.592 22.247 30.677 22.581 30.677 23.004M37.933 24.233c-.026-.071-.101-.044-.101-.044-.114.041-.236.078-.366.097-.131.019-.276.029-.431.029-.381 0-.684-.105-.901-.313-.217-.208-.339-.544-.338-.999.001-.413.109-.724.302-.962.192-.236.485-.357.874-.357.325 0 .573.035.832.11 0 0 .062.025.091-.05.07-.178.12-.304.194-.499.021-.056-.03-.079-.049-.086-.102-.037-.343-.098-.525-.124C37.345 21.013 37.145 21 36.924 21c-.331 0-.625.053-.878.157-.252.103-.465.247-.635.426-.169.179-.297.392-.383.634-.086.241-.128.506-.128.787 0 .606.176 1.095.524 1.453C35.773 24.818 36.296 25 36.979 25c.404 0 .817-.076 1.116-.184 0 0 .057-.026.032-.087L37.933 24.233zM41.963 22.081c-.067-.235-.233-.471-.341-.579-.172-.172-.34-.292-.506-.358C40.898 21.057 40.638 21 40.352 21c-.333 0-.635.052-.88.159-.245.107-.452.253-.614.435-.162.181-.283.397-.361.642-.078.243-.117.509-.117.789 0 .285.041.551.121.79.081.241.211.453.386.629.176.177.401.315.671.412.268.096.594.146.968.145.77-.002 1.176-.161 1.343-.247.03-.016.057-.042.023-.119l-.175-.453c-.026-.067-.1-.043-.1-.043-.191.066-.462.184-1.095.183-.414-.001-.72-.113-.912-.291-.197-.181-.294-.447-.31-.822l2.666.002c0 0 .07-.001.078-.065C42.045 23.119 42.134 22.637 41.963 22.081M39.311 22.597c.038-.235.107-.431.216-.583.163-.231.412-.359.762-.359.35 0 .581.128.747.359.11.153.158.356.177.584L39.311 22.597zM20.453 22.081c-.067-.235-.233-.471-.341-.579-.172-.172-.339-.292-.506-.358C19.388 21.057 19.128 21 18.843 21c-.333 0-.635.052-.881.159-.245.107-.452.253-.614.435-.162.181-.283.397-.361.642-.078.243-.117.509-.117.789 0 .285.041.551.121.79.081.241.211.453.386.629.176.177.401.315.671.412.268.096.594.146.968.145.77-.002 1.176-.161 1.343-.247.03-.016.057-.042.023-.119l-.175-.453c-.026-.067-.1-.043-.1-.043-.191.066-.462.184-1.095.183-.413-.001-.72-.113-.912-.291-.197-.181-.294-.447-.31-.822l2.666.002c0 0 .07-.001.078-.065C20.536 23.119 20.624 22.637 20.453 22.081M17.802 22.597c.038-.235.107-.431.215-.583.164-.231.412-.359.763-.359.35 0 .581.128.748.359.11.153.158.356.176.584L17.802 22.597zM12.93 22.482c-.108-.007-.248-.011-.416-.011-.229 0-.45.026-.657.078-.208.052-.395.132-.556.239-.162.108-.292.245-.387.408s-.143.355-.143.569c0 .219.041.409.122.564.081.156.198.286.347.387.148.1.331.174.543.218C11.994 24.977 12.231 25 12.491 25c.274 0 .546-.021.81-.063.262-.041.582-.101.671-.121.089-.019.187-.044.187-.044.066-.016.061-.081.061-.081l-.001-2.259c0-.496-.143-.863-.423-1.091C13.515 21.115 13.102 21 12.57 21c-.2 0-.521.025-.715.061 0 0-.582.105-.821.279 0 0-.053.03-.024.098l.189.47c.024.061.088.04.088.04s.02-.007.044-.021c.512-.258 1.161-.251 1.161-.251.288 0 .51.054.659.16.145.104.219.259.219.589v.105C13.141 22.499 12.93 22.482 12.93 22.482M11.869 24.218c-.105-.077-.119-.096-.153-.147-.053-.076-.08-.184-.08-.321 0-.217.078-.373.238-.478-.001 0 .23-.185.773-.179.382.004.724.057.724.057v1.123c0 0-.339.067-.72.088C12.109 24.392 11.867 24.217 11.869 24.218M34.76 21.169c.02-.058-.022-.085-.04-.092-.045-.016-.272-.062-.447-.073-.335-.019-.521.034-.688.106-.166.071-.349.187-.45.318l-.001-.311c0-.043-.032-.077-.076-.077h-.684c-.045 0-.076.034-.076.077v3.806c0 .043.036.077.081.077h.7c.045 0 .08-.034.08-.077v-1.901c0-.256.03-.51.089-.67.057-.158.136-.285.233-.375.097-.091.208-.154.33-.19.124-.036.261-.049.357-.049.14 0 .293.035.293.035.052.005.08-.025.098-.069C34.606 21.588 34.736 21.238 34.76 21.169"></path><path fill="#fff" d="M28.203 19.106c-.085-.026-.162-.044-.264-.062-.103-.019-.224-.028-.362-.028-.482 0-.862.137-1.129.406-.265.267-.446.674-.536 1.209l-.05.366h-.605c0 0-.074-.003-.089.078l-.099.554c-.007.053.016.086.087.086h.59l-.598 3.337c-.047.268-.1.489-.16.657-.058.166-.116.289-.186.379-.068.087-.133.151-.244.189-.092.03-.198.045-.314.045-.064 0-.15-.011-.214-.024-.064-.012-.097-.026-.144-.046 0 0-.069-.026-.097.043-.022.057-.178.489-.197.542-.019.053.007.094.041.106.078.028.137.046.243.071.149.035.274.037.391.037.245 0 .469-.034.654-.101.187-.068.349-.185.493-.343.155-.172.253-.352.346-.597.093-.243.171-.544.235-.896l.6-3.399h.878c0 0 .074.003.089-.078l.099-.554c.007-.053-.016-.086-.087-.086h-.853c.004-.019.06-.505.158-.787.042-.121.12-.218.187-.285.065-.066.141-.112.223-.139.085-.027.181-.041.286-.041.08 0 .159.009.219.022.082.018.115.027.137.033.087.027.098.001.116-.041l.203-.56C28.273 19.139 28.222 19.114 28.203 19.106M15.899 24.917c0 .046-.032.083-.076.083h-.707c-.045 0-.076-.037-.076-.083v-5.834c0-.046.032-.082.076-.082h.707c.045 0 .076.037.076.082V24.917z"></path>
-                </svg>
+                <img src="/assets/logos/salesforce.svg" alt="" class="project-company-logo logo-salesforce" width="16" height="16" />
                 Salesforce
               </span>
             </div>
@@ -1496,15 +1524,18 @@
               <span class="tech-tag" data-skill-highlight="slack">Slack</span>
               <span class="tech-tag" data-skill-highlight="python">Python</span>
             </div>
+            <div class="project-links">
+              <a href="https://github.com/Srirammkm/sriram-portfolio-resume" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                <i data-lucide="external-link"></i> Portfolio &amp; demos
+              </a>
+            </div>
           </article>
 
           <article class="project-item">
             <div class="project-header">
               <h3 class="project-name">Cosmic AI Agent Platform</h3>
               <span class="project-tag">
-                <svg class="project-company-logo logo-salesforce" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                  <path fill="#039be5" d="M36.5,12c-1.326,0-2.59,0.256-3.758,0.705C31.321,10.48,28.836,9,26,9c-2.107,0-4.018,0.821-5.447,2.152C18.815,9.221,16.303,8,13.5,8C8.253,8,4,12.253,4,17.5c0,0.792,0.108,1.558,0.29,2.293C2.291,21.349,1,23.771,1,26.5C1,31.194,4.806,35,9.5,35c0.413,0,0.816-0.039,1.214-0.096C12.027,37.903,15.017,40,18.5,40c3.162,0,5.916-1.731,7.38-4.293C26.556,35.893,27.265,36,28,36c2.62,0,4.938-1.265,6.398-3.211C35.077,32.927,35.78,33,36.5,33C42.299,33,47,28.299,47,22.5C47,16.701,42.299,12,36.5,12z"></path><path fill="#fff" d="M15.823 25c.045 0 .076-.037.076-.083C15.899 24.963 15.867 25 15.823 25L15.823 25zM21.503 23.934c.024 0 .047.008.055.013-.008-.005-.03-.013-.053-.013C21.504 23.933 21.503 23.934 21.503 23.934zM7.138 23.93c.023 0 .045.008.058.016-.013-.007-.034-.017-.056-.017C7.139 23.929 7.138 23.93 7.138 23.93zM24.126 21.909c-.016.039-.046.045-.072.043.004.001.004.003.009.003C24.086 21.954 24.112 21.944 24.126 21.909zM15.823 19c.045 0 .076.037.076.082C15.899 19.037 15.867 19 15.823 19L15.823 19zM21.359 22.185L21.359 22.185c0 .408.211.662.506.835C21.569 22.847 21.359 22.594 21.359 22.185zM38.126 24.729c.025.061-.032.087-.032.087S38.151 24.79 38.126 24.729zM8.558 21L8.558 21c.253 0 .503.034.733.093C9.061 21.034 8.811 21 8.558 21zM9.764 21.909c-.016.039-.046.045-.072.043.004.001.004.003.009.003C9.725 21.954 9.75 21.944 9.764 21.909zM35.195 24.164c.065.106.142.203.229.293s.185.169.294.237c-.109-.068-.207-.147-.294-.237C35.337 24.368 35.261 24.27 35.195 24.164zM37.83 21.797c-.012 0-.026-.002-.026-.002s.01.004.024.004C37.828 21.799 37.829 21.797 37.83 21.797zM37.832 24.189c0 0 .017-.003.034-.004-.001 0-.001-.001-.002-.001C37.846 24.184 37.832 24.189 37.832 24.189z"></path><path fill="#fff" d="M6.885 24.462c-.029.07.01.084.02.096.087.058.174.1.262.146C7.636 24.933 8.08 25 8.543 25c.944 0 1.53-.462 1.53-1.207v-.014c0-.689-.662-.939-1.282-1.12L8.71 22.635c-.468-.14-.871-.261-.871-.545v-.014c0-.243.236-.422.602-.422.406 0 .888.125 1.199.283 0 0 .092.054.125-.027.018-.044.175-.434.192-.476.018-.045-.014-.08-.046-.098C9.555 21.136 9.065 21 8.558 21l-.094.001c-.864 0-1.467.481-1.467 1.17v.014c0 .726.665.962 1.289 1.126l.1.029c.454.128.846.239.846.533v.015c0 .269-.255.47-.665.47-.16 0-.667-.002-1.216-.322C7.285 24 7.247 23.975 7.196 23.946c-.027-.016-.095-.042-.124.039L6.885 24.462zM21.247 24.462c-.029.07.01.084.02.096.087.058.174.1.262.146C21.998 24.933 22.442 25 22.905 25c.944 0 1.53-.462 1.53-1.207v-.014c0-.689-.662-.939-1.282-1.12l-.081-.024c-.468-.14-.871-.261-.871-.545v-.014c0-.243.236-.422.602-.422.406 0 .888.125 1.199.283 0 0 .092.054.125-.027.018-.044.175-.434.192-.476.018-.045-.014-.08-.046-.098C23.917 21.136 23.427 21 22.92 21l-.094.001c-.864 0-1.467.481-1.467 1.17v.014c0 .726.666.962 1.289 1.126l.1.029c.454.128.846.239.846.533v.015c0 .269-.255.47-.665.47-.16 0-.667-.002-1.216-.322-.066-.036-.105-.06-.155-.09-.017-.01-.097-.039-.124.039L21.247 24.462zM31.465 22.219c-.077-.243-.198-.457-.358-.635-.16-.179-.364-.322-.605-.426C30.261 21.053 29.977 21 29.658 21c-.32 0-.604.053-.845.157s-.444.248-.604.427c-.161.178-.281.392-.358.634-.077.241-.116.505-.116.785s.039.544.116.785c.077.242.197.456.358.635.16.179.364.322.605.423S29.338 25 29.658 25c.319 0 .602-.051.844-.153.241-.102.444-.245.605-.423.16-.178.281-.392.358-.635.077-.241.116-.505.116-.785C31.581 22.724 31.542 22.46 31.465 22.219M30.677 23.004c0 .423-.085.758-.253.993-.166.233-.417.347-.767.347s-.6-.114-.763-.347c-.166-.236-.249-.57-.249-.993s.084-.756.249-.99c.164-.231.414-.343.764-.343s.6.112.767.343C30.592 22.247 30.677 22.581 30.677 23.004M37.933 24.233c-.026-.071-.101-.044-.101-.044-.114.041-.236.078-.366.097-.131.019-.276.029-.431.029-.381 0-.684-.105-.901-.313-.217-.208-.339-.544-.338-.999.001-.413.109-.724.302-.962.192-.236.485-.357.874-.357.325 0 .573.035.832.11 0 0 .062.025.091-.05.07-.178.12-.304.194-.499.021-.056-.03-.079-.049-.086-.102-.037-.343-.098-.525-.124C37.345 21.013 37.145 21 36.924 21c-.331 0-.625.053-.878.157-.252.103-.465.247-.635.426-.169.179-.297.392-.383.634-.086.241-.128.506-.128.787 0 .606.176 1.095.524 1.453C35.773 24.818 36.296 25 36.979 25c.404 0 .817-.076 1.116-.184 0 0 .057-.026.032-.087L37.933 24.233zM41.963 22.081c-.067-.235-.233-.471-.341-.579-.172-.172-.34-.292-.506-.358C40.898 21.057 40.638 21 40.352 21c-.333 0-.635.052-.88.159-.245.107-.452.253-.614.435-.162.181-.283.397-.361.642-.078.243-.117.509-.117.789 0 .285.041.551.121.79.081.241.211.453.386.629.176.177.401.315.671.412.268.096.594.146.968.145.77-.002 1.176-.161 1.343-.247.03-.016.057-.042.023-.119l-.175-.453c-.026-.067-.1-.043-.1-.043-.191.066-.462.184-1.095.183-.414-.001-.72-.113-.912-.291-.197-.181-.294-.447-.31-.822l2.666.002c0 0 .07-.001.078-.065C42.045 23.119 42.134 22.637 41.963 22.081M39.311 22.597c.038-.235.107-.431.216-.583.163-.231.412-.359.762-.359.35 0 .581.128.747.359.11.153.158.356.177.584L39.311 22.597zM20.453 22.081c-.067-.235-.233-.471-.341-.579-.172-.172-.339-.292-.506-.358C19.388 21.057 19.128 21 18.843 21c-.333 0-.635.052-.881.159-.245.107-.452.253-.614.435-.162.181-.283.397-.361.642-.078.243-.117.509-.117.789 0 .285.041.551.121.79.081.241.211.453.386.629.176.177.401.315.671.412.268.096.594.146.968.145.77-.002 1.176-.161 1.343-.247.03-.016.057-.042.023-.119l-.175-.453c-.026-.067-.1-.043-.1-.043-.191.066-.462.184-1.095.183-.413-.001-.72-.113-.912-.291-.197-.181-.294-.447-.31-.822l2.666.002c0 0 .07-.001.078-.065C20.536 23.119 20.624 22.637 20.453 22.081M17.802 22.597c.038-.235.107-.431.215-.583.164-.231.412-.359.763-.359.35 0 .581.128.748.359.11.153.158.356.176.584L17.802 22.597zM12.93 22.482c-.108-.007-.248-.011-.416-.011-.229 0-.45.026-.657.078-.208.052-.395.132-.556.239-.162.108-.292.245-.387.408s-.143.355-.143.569c0 .219.041.409.122.564.081.156.198.286.347.387.148.1.331.174.543.218C11.994 24.977 12.231 25 12.491 25c.274 0 .546-.021.81-.063.262-.041.582-.101.671-.121.089-.019.187-.044.187-.044.066-.016.061-.081.061-.081l-.001-2.259c0-.496-.143-.863-.423-1.091C13.515 21.115 13.102 21 12.57 21c-.2 0-.521.025-.715.061 0 0-.582.105-.821.279 0 0-.053.03-.024.098l.189.47c.024.061.088.04.088.04s.02-.007.044-.021c.512-.258 1.161-.251 1.161-.251.288 0 .51.054.659.16.145.104.219.259.219.589v.105C13.141 22.499 12.93 22.482 12.93 22.482M11.869 24.218c-.105-.077-.119-.096-.153-.147-.053-.076-.08-.184-.08-.321 0-.217.078-.373.238-.478-.001 0 .23-.185.773-.179.382.004.724.057.724.057v1.123c0 0-.339.067-.72.088C12.109 24.392 11.867 24.217 11.869 24.218M34.76 21.169c.02-.058-.022-.085-.04-.092-.045-.016-.272-.062-.447-.073-.335-.019-.521.034-.688.106-.166.071-.349.187-.45.318l-.001-.311c0-.043-.032-.077-.076-.077h-.684c-.045 0-.076.034-.076.077v3.806c0 .043.036.077.081.077h.7c.045 0 .08-.034.08-.077v-1.901c0-.256.03-.51.089-.67.057-.158.136-.285.233-.375.097-.091.208-.154.33-.19.124-.036.261-.049.357-.049.14 0 .293.035.293.035.052.005.08-.025.098-.069C34.606 21.588 34.736 21.238 34.76 21.169"></path><path fill="#fff" d="M28.203 19.106c-.085-.026-.162-.044-.264-.062-.103-.019-.224-.028-.362-.028-.482 0-.862.137-1.129.406-.265.267-.446.674-.536 1.209l-.05.366h-.605c0 0-.074-.003-.089.078l-.099.554c-.007.053.016.086.087.086h.59l-.598 3.337c-.047.268-.1.489-.16.657-.058.166-.116.289-.186.379-.068.087-.133.151-.244.189-.092.03-.198.045-.314.045-.064 0-.15-.011-.214-.024-.064-.012-.097-.026-.144-.046 0 0-.069-.026-.097.043-.022.057-.178.489-.197.542-.019.053.007.094.041.106.078.028.137.046.243.071.149.035.274.037.391.037.245 0 .469-.034.654-.101.187-.068.349-.185.493-.343.155-.172.253-.352.346-.597.093-.243.171-.544.235-.896l.6-3.399h.878c0 0 .074.003.089-.078l.099-.554c.007-.053-.016-.086-.087-.086h-.853c.004-.019.06-.505.158-.787.042-.121.12-.218.187-.285.065-.066.141-.112.223-.139.085-.027.181-.041.286-.041.08 0 .159.009.219.022.082.018.115.027.137.033.087.027.098.001.116-.041l.203-.56C28.273 19.139 28.222 19.114 28.203 19.106M15.899 24.917c0 .046-.032.083-.076.083h-.707c-.045 0-.076-.037-.076-.083v-5.834c0-.046.032-.082.076-.082h.707c.045 0 .076.037.076.082V24.917z"></path>
-                </svg>
+                <img src="/assets/logos/salesforce.svg" alt="" class="project-company-logo logo-salesforce" width="16" height="16" />
                 Salesforce
               </span>
             </div>
@@ -1523,6 +1554,11 @@
               <span class="tech-tag" data-skill-highlight="kubernetes">Kubernetes</span>
               <span class="tech-tag" data-skill-highlight="gitops">GitOps</span>
             </div>
+            <div class="project-links">
+              <a href="https://github.com/Srirammkm/sriram-portfolio-resume" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                <i data-lucide="external-link"></i> Portfolio &amp; demos
+              </a>
+            </div>
           </article>
         </div>
       </section>
@@ -1537,9 +1573,7 @@
             <div class="job-card">
               <header class="job-header">
                 <div class="job-brand-group">
-                  <div class="company-logo-wrapper"><svg class="company-logo-svg logo-salesforce" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                      <path fill="#039be5" d="M36.5,12c-1.326,0-2.59,0.256-3.758,0.705C31.321,10.48,28.836,9,26,9c-2.107,0-4.018,0.821-5.447,2.152C18.815,9.221,16.303,8,13.5,8C8.253,8,4,12.253,4,17.5c0,0.792,0.108,1.558,0.29,2.293C2.291,21.349,1,23.771,1,26.5C1,31.194,4.806,35,9.5,35c0.413,0,0.816-0.039,1.214-0.096C12.027,37.903,15.017,40,18.5,40c3.162,0,5.916-1.731,7.38-4.293C26.556,35.893,27.265,36,28,36c2.62,0,4.938-1.265,6.398-3.211C35.077,32.927,35.78,33,36.5,33C42.299,33,47,28.299,47,22.5C47,16.701,42.299,12,36.5,12z"></path><path fill="#fff" d="M15.823 25c.045 0 .076-.037.076-.083C15.899 24.963 15.867 25 15.823 25L15.823 25zM21.503 23.934c.024 0 .047.008.055.013-.008-.005-.03-.013-.053-.013C21.504 23.933 21.503 23.934 21.503 23.934zM7.138 23.93c.023 0 .045.008.058.016-.013-.007-.034-.017-.056-.017C7.139 23.929 7.138 23.93 7.138 23.93zM24.126 21.909c-.016.039-.046.045-.072.043.004.001.004.003.009.003C24.086 21.954 24.112 21.944 24.126 21.909zM15.823 19c.045 0 .076.037.076.082C15.899 19.037 15.867 19 15.823 19L15.823 19zM21.359 22.185L21.359 22.185c0 .408.211.662.506.835C21.569 22.847 21.359 22.594 21.359 22.185zM38.126 24.729c.025.061-.032.087-.032.087S38.151 24.79 38.126 24.729zM8.558 21L8.558 21c.253 0 .503.034.733.093C9.061 21.034 8.811 21 8.558 21zM9.764 21.909c-.016.039-.046.045-.072.043.004.001.004.003.009.003C9.725 21.954 9.75 21.944 9.764 21.909zM35.195 24.164c.065.106.142.203.229.293s.185.169.294.237c-.109-.068-.207-.147-.294-.237C35.337 24.368 35.261 24.27 35.195 24.164zM37.83 21.797c-.012 0-.026-.002-.026-.002s.01.004.024.004C37.828 21.799 37.829 21.797 37.83 21.797zM37.832 24.189c0 0 .017-.003.034-.004-.001 0-.001-.001-.002-.001C37.846 24.184 37.832 24.189 37.832 24.189z"></path><path fill="#fff" d="M6.885 24.462c-.029.07.01.084.02.096.087.058.174.1.262.146C7.636 24.933 8.08 25 8.543 25c.944 0 1.53-.462 1.53-1.207v-.014c0-.689-.662-.939-1.282-1.12L8.71 22.635c-.468-.14-.871-.261-.871-.545v-.014c0-.243.236-.422.602-.422.406 0 .888.125 1.199.283 0 0 .092.054.125-.027.018-.044.175-.434.192-.476.018-.045-.014-.08-.046-.098C9.555 21.136 9.065 21 8.558 21l-.094.001c-.864 0-1.467.481-1.467 1.17v.014c0 .726.665.962 1.289 1.126l.1.029c.454.128.846.239.846.533v.015c0 .269-.255.47-.665.47-.16 0-.667-.002-1.216-.322C7.285 24 7.247 23.975 7.196 23.946c-.027-.016-.095-.042-.124.039L6.885 24.462zM21.247 24.462c-.029.07.01.084.02.096.087.058.174.1.262.146C21.998 24.933 22.442 25 22.905 25c.944 0 1.53-.462 1.53-1.207v-.014c0-.689-.662-.939-1.282-1.12l-.081-.024c-.468-.14-.871-.261-.871-.545v-.014c0-.243.236-.422.602-.422.406 0 .888.125 1.199.283 0 0 .092.054.125-.027.018-.044.175-.434.192-.476.018-.045-.014-.08-.046-.098C23.917 21.136 23.427 21 22.92 21l-.094.001c-.864 0-1.467.481-1.467 1.17v.014c0 .726.666.962 1.289 1.126l.1.029c.454.128.846.239.846.533v.015c0 .269-.255.47-.665.47-.16 0-.667-.002-1.216-.322-.066-.036-.105-.06-.155-.09-.017-.01-.097-.039-.124.039L21.247 24.462zM31.465 22.219c-.077-.243-.198-.457-.358-.635-.16-.179-.364-.322-.605-.426C30.261 21.053 29.977 21 29.658 21c-.32 0-.604.053-.845.157s-.444.248-.604.427c-.161.178-.281.392-.358.634-.077.241-.116.505-.116.785s.039.544.116.785c.077.242.197.456.358.635.16.179.364.322.605.423S29.338 25 29.658 25c.319 0 .602-.051.844-.153.241-.102.444-.245.605-.423.16-.178.281-.392.358-.635.077-.241.116-.505.116-.785C31.581 22.724 31.542 22.46 31.465 22.219M30.677 23.004c0 .423-.085.758-.253.993-.166.233-.417.347-.767.347s-.6-.114-.763-.347c-.166-.236-.249-.57-.249-.993s.084-.756.249-.99c.164-.231.414-.343.764-.343s.6.112.767.343C30.592 22.247 30.677 22.581 30.677 23.004M37.933 24.233c-.026-.071-.101-.044-.101-.044-.114.041-.236.078-.366.097-.131.019-.276.029-.431.029-.381 0-.684-.105-.901-.313-.217-.208-.339-.544-.338-.999.001-.413.109-.724.302-.962.192-.236.485-.357.874-.357.325 0 .573.035.832.11 0 0 .062.025.091-.05.07-.178.12-.304.194-.499.021-.056-.03-.079-.049-.086-.102-.037-.343-.098-.525-.124C37.345 21.013 37.145 21 36.924 21c-.331 0-.625.053-.878.157-.252.103-.465.247-.635.426-.169.179-.297.392-.383.634-.086.241-.128.506-.128.787 0 .606.176 1.095.524 1.453C35.773 24.818 36.296 25 36.979 25c.404 0 .817-.076 1.116-.184 0 0 .057-.026.032-.087L37.933 24.233zM41.963 22.081c-.067-.235-.233-.471-.341-.579-.172-.172-.34-.292-.506-.358C40.898 21.057 40.638 21 40.352 21c-.333 0-.635.052-.88.159-.245.107-.452.253-.614.435-.162.181-.283.397-.361.642-.078.243-.117.509-.117.789 0 .285.041.551.121.79.081.241.211.453.386.629.176.177.401.315.671.412.268.096.594.146.968.145.77-.002 1.176-.161 1.343-.247.03-.016.057-.042.023-.119l-.175-.453c-.026-.067-.1-.043-.1-.043-.191.066-.462.184-1.095.183-.414-.001-.72-.113-.912-.291-.197-.181-.294-.447-.31-.822l2.666.002c0 0 .07-.001.078-.065C42.045 23.119 42.134 22.637 41.963 22.081M39.311 22.597c.038-.235.107-.431.216-.583.163-.231.412-.359.762-.359.35 0 .581.128.747.359.11.153.158.356.177.584L39.311 22.597zM20.453 22.081c-.067-.235-.233-.471-.341-.579-.172-.172-.339-.292-.506-.358C19.388 21.057 19.128 21 18.843 21c-.333 0-.635.052-.881.159-.245.107-.452.253-.614.435-.162.181-.283.397-.361.642-.078.243-.117.509-.117.789 0 .285.041.551.121.79.081.241.211.453.386.629.176.177.401.315.671.412.268.096.594.146.968.145.77-.002 1.176-.161 1.343-.247.03-.016.057-.042.023-.119l-.175-.453c-.026-.067-.1-.043-.1-.043-.191.066-.462.184-1.095.183-.413-.001-.72-.113-.912-.291-.197-.181-.294-.447-.31-.822l2.666.002c0 0 .07-.001.078-.065C20.536 23.119 20.624 22.637 20.453 22.081M17.802 22.597c.038-.235.107-.431.215-.583.164-.231.412-.359.763-.359.35 0 .581.128.748.359.11.153.158.356.176.584L17.802 22.597zM12.93 22.482c-.108-.007-.248-.011-.416-.011-.229 0-.45.026-.657.078-.208.052-.395.132-.556.239-.162.108-.292.245-.387.408s-.143.355-.143.569c0 .219.041.409.122.564.081.156.198.286.347.387.148.1.331.174.543.218C11.994 24.977 12.231 25 12.491 25c.274 0 .546-.021.81-.063.262-.041.582-.101.671-.121.089-.019.187-.044.187-.044.066-.016.061-.081.061-.081l-.001-2.259c0-.496-.143-.863-.423-1.091C13.515 21.115 13.102 21 12.57 21c-.2 0-.521.025-.715.061 0 0-.582.105-.821.279 0 0-.053.03-.024.098l.189.47c.024.061.088.04.088.04s.02-.007.044-.021c.512-.258 1.161-.251 1.161-.251.288 0 .51.054.659.16.145.104.219.259.219.589v.105C13.141 22.499 12.93 22.482 12.93 22.482M11.869 24.218c-.105-.077-.119-.096-.153-.147-.053-.076-.08-.184-.08-.321 0-.217.078-.373.238-.478-.001 0 .23-.185.773-.179.382.004.724.057.724.057v1.123c0 0-.339.067-.72.088C12.109 24.392 11.867 24.217 11.869 24.218M34.76 21.169c.02-.058-.022-.085-.04-.092-.045-.016-.272-.062-.447-.073-.335-.019-.521.034-.688.106-.166.071-.349.187-.45.318l-.001-.311c0-.043-.032-.077-.076-.077h-.684c-.045 0-.076.034-.076.077v3.806c0 .043.036.077.081.077h.7c.045 0 .08-.034.08-.077v-1.901c0-.256.03-.51.089-.67.057-.158.136-.285.233-.375.097-.091.208-.154.33-.19.124-.036.261-.049.357-.049.14 0 .293.035.293.035.052.005.08-.025.098-.069C34.606 21.588 34.736 21.238 34.76 21.169"></path><path fill="#fff" d="M28.203 19.106c-.085-.026-.162-.044-.264-.062-.103-.019-.224-.028-.362-.028-.482 0-.862.137-1.129.406-.265.267-.446.674-.536 1.209l-.05.366h-.605c0 0-.074-.003-.089.078l-.099.554c-.007.053.016.086.087.086h.59l-.598 3.337c-.047.268-.1.489-.16.657-.058.166-.116.289-.186.379-.068.087-.133.151-.244.189-.092.03-.198.045-.314.045-.064 0-.15-.011-.214-.024-.064-.012-.097-.026-.144-.046 0 0-.069-.026-.097.043-.022.057-.178.489-.197.542-.019.053.007.094.041.106.078.028.137.046.243.071.149.035.274.037.391.037.245 0 .469-.034.654-.101.187-.068.349-.185.493-.343.155-.172.253-.352.346-.597.093-.243.171-.544.235-.896l.6-3.399h.878c0 0 .074.003.089-.078l.099-.554c.007-.053-.016-.086-.087-.086h-.853c.004-.019.06-.505.158-.787.042-.121.12-.218.187-.285.065-.066.141-.112.223-.139.085-.027.181-.041.286-.041.08 0 .159.009.219.022.082.018.115.027.137.033.087.027.098.001.116-.041l.203-.56C28.273 19.139 28.222 19.114 28.203 19.106M15.899 24.917c0 .046-.032.083-.076.083h-.707c-.045 0-.076-.037-.076-.083v-5.834c0-.046.032-.082.076-.082h.707c.045 0 .076.037.076.082V24.917z"></path>
-                    </svg></div>
+                  <div class="company-logo-wrapper"><img src="/assets/logos/salesforce.svg" alt="" class="company-logo-svg logo-salesforce" width="24" height="24" /></div>
                   <div>
                     <h3 class="job-role">Member of Technical Staff</h3>
                     <h4 class="job-company">Salesforce</h4>
@@ -1744,7 +1778,7 @@
           <div class="honor-item">
             <span class="honor-badge"><i data-lucide="git-branch"></i></span>
             <div>
-              <h3 class="honor-name">Contributor / JsonQ</h3>
+              <h3 class="honor-name">Contributor / <a href="https://github.com/Srirammkm" target="_blank" rel="noopener noreferrer">JsonQ</a></h3>
               <p class="honor-desc">Contributed updates and enhancements to JsonQ, a query-like library for JSON data structures in Python/Golang.</p>
             </div>
           </div>
@@ -1754,153 +1788,9 @@
     </div>
   </main>
 
-  <!-- Clean ATS Printable Sheet (Renders on toggle or during printing) -->
-  <div id="ats-resume-sheet" class="ats-container">
-    <header class="ats-header">
-      <h1 class="ats-name">SRIRAM MANIKANTH</h1>
-      <p class="ats-contact">
-        Bangalore Urban, Karnataka 560093 | 7010561869 | <a href="mailto:msriram0803@gmail.com">msriram0803@gmail.com</a>
-      </p>
-      <p class="ats-links">
-        LinkedIn: <a href="https://www.linkedin.com/in/sriram-manikanth-m-685323129">linkedin.com/in/sriram-manikanth-m-685323129</a>
-      </p>
-    </header>
+  <!-- ATS sheet rendered from content/resume.json -->
+  <div id="ats-resume-sheet" class="ats-container" aria-label="ATS printable resume"></div>
 
-    <hr class="ats-divider">
-
-    <section class="ats-section">
-      <h2 class="ats-section-title">SUMMARY</h2>
-      <p>
-        Results-oriented DevOps professional specializing in AI-driven automation and scalable infrastructure solutions. Expertise in Kubernetes and Terraform drives enhanced operational efficiency and improved deployment speed. Collaborates with cross-functional teams to deliver innovative solutions that elevate service reliability and customer satisfaction.
-      </p>
-    </section>
-
-    <section class="ats-section">
-      <h2 class="ats-section-title">SKILLS</h2>
-      <p>
-        <strong>DevOps & SRE:</strong> DevOps, CI/CD, GitOps, SRE, System Architecture, Incident Management, Cost Management Strategies, ChatOps, Incident Response, Disaster Recovery (DR).<br>
-        <strong>Cloud & Platforms:</strong> Kubernetes, Docker, AWS, Azure, GCP, Ansible, Chef, IBM MQ.<br>
-        <strong>AI & Automation:</strong> Large Language Models (LLM), Azure OpenAI, AI Automation, Temporal Workflows, Python, Bash Scripting.<br>
-        <strong>Collaboration:</strong> Microsoft Teams, Slack, Team Collaboration Tools.
-      </p>
-    </section>
-
-    <section class="ats-section">
-      <h2 class="ats-section-title">EXPERIENCE</h2>
-      
-      <div class="ats-job">
-        <div class="ats-job-header">
-          <strong>SALESFORCE</strong> - Bangalore Urban, Karnataka
-          <span class="ats-job-date">March 2026 – Present</span>
-        </div>
-        <div class="ats-job-title"><em>Member of Technical Staff</em></div>
-        <ul class="ats-bullets">
-          <li>Architected and built NextOps, a Slack-native ChatOps/self-service platform for automating production operations, featuring Temporal-backed workflows, a live Slack-administered RBAC engine, on-call automation, and AI-driven Root Cause Analysis.</li>
-          <li>Designed and implemented Cosmic AI, a manifest-driven AI agent platform that manages multi-tenant cloud infrastructure via natural-language Slack/Teams chat, leveraging YAML specs for auto-compilation into Temporal workers with LLM query generation and capability-level RBAC.</li>
-        </ul>
-      </div>
-
-      <div class="ats-job">
-        <div class="ats-job-header">
-          <strong>INFORMATICA</strong> - Bengaluru, Karnataka
-          <span class="ats-job-date">April 2024 – March 2026</span>
-        </div>
-        <div class="ats-job-title"><em>Senior DevOps Engineer</em></div>
-        <ul class="ats-bullets">
-          <li>Designed and developed a scalable AI Agent Orchestration Platform, incorporating dynamic task chaining, parallel execution, intelligent data flow, and a central agent knowledge layer for improved automation accuracy and accelerated multi-step workflows.</li>
-          <li>Built Ops-Sage, an on-call alert automation system that validates incoming alerts against configured runbooks and executes remediations through the governed portal — reducing pager load for repeat failure patterns.</li>
-          <li>Developed multiple Microsoft Teams bots to support team operations and streamline incident management processes.</li>
-          <li>Created a self-service portal using Python and Temporal, enabling teams to independently run scripts and perform operational tasks, reducing reliance on DevOps/Platform support.</li>
-          <li>Automated Emergency Bug Fix (EBF) deployments, optimizing the release process and achieving a 50% increase in deployment speed by minimizing manual intervention.</li>
-          <li>Partnered with customers to diagnose and resolve critical issues, ensuring high satisfaction and reliable service delivery.</li>
-          <li>Contributed to Disaster Recovery (DR) drills, driving process enhancements and reducing recovery times annually.</li>
-          <li>Collaborated with the FinOps team to monitor and optimize infrastructure costs, implementing cost-efficient architectures that significantly lowered cloud expenses.</li>
-        </ul>
-      </div>
-
-      <div class="ats-job">
-        <div class="ats-job-header">
-          <strong>INFORMATICA</strong> - Bengaluru, Karnataka
-          <span class="ats-job-date">September 2022 – April 2024</span>
-        </div>
-        <div class="ats-job-title"><em>DevOps Engineer</em></div>
-        <ul class="ats-bullets">
-          <li>Led the onboarding of a multi-cloud data platform service across AWS, Azure, and GCP, optimizing data management workflows.</li>
-          <li>Collaborated with cross-functional teams to implement GitOps methodologies, enhancing version control and deployment accuracy.</li>
-          <li>Utilized Kubernetes to orchestrate containerized applications, improving scalability and resource utilization.</li>
-          <li>Engineered infrastructure as code (IaC) using Terraform to ensure consistent and repeatable environment provisioning.</li>
-          <li>Employed Chef for configuration management, automating software deployments and system configurations.</li>
-          <li>Developed Python and Bash scripts to automate routine tasks, reducing manual effort by 80%.</li>
-          <li>Played a key role in cloud migrations, ensuring minimal downtime and seamless data transition.</li>
-          <li>Swiftly addressed production incidents, performing root cause analysis and implementing corrective actions.</li>
-          <li>Contributed to the development of internal tools, streamlining team processes and enhancing productivity.</li>
-        </ul>
-      </div>
-
-      <div class="ats-job">
-        <div class="ats-job-header">
-          <strong>THOUGHTWORKS</strong> - Bangalore Urban, Karnataka
-          <span class="ats-job-date">December 2021 – August 2022</span>
-        </div>
-        <div class="ats-job-title"><em>Infrastructure Consultant</em></div>
-        <ul class="ats-bullets">
-          <li>Implemented automation solutions using Python to streamline infrastructure management tasks.</li>
-          <li>Managed application deployments within Kubernetes environments, ensuring smooth operations and scalability.</li>
-          <li>Designed and implemented robust CI/CD pipelines to accelerate software delivery and improve release reliability.</li>
-          <li>Conducted security vulnerability checks across infrastructure to maintain high security standards.</li>
-          <li>Performed cost-cutting research for AWS cloud resources, identifying and implementing strategies to optimize expenditure.</li>
-        </ul>
-      </div>
-
-      <div class="ats-job">
-        <div class="ats-job-header">
-          <strong>TATA CONSULTANCY SERVICES</strong> - Chennai, Tamil Nadu
-          <span class="ats-job-date">August 2020 – November 2021</span>
-        </div>
-        <div class="ats-job-title"><em>Assistant System Engineer</em></div>
-        <ul class="ats-bullets">
-          <li>Integrated CI/CD pipelines to automate build, test, and deployment processes for microservices, enhancing workflow efficiency.</li>
-          <li>Configured and managed Kubernetes clusters for container orchestration and application deployment, ensuring reliable application performance.</li>
-          <li>Automated preparation and configuration of testing platforms for IBM MQ software across cloud providers (AWS, Azure, IBM Cloud, GCP) and on-premise servers using Ansible and various tools, streamlining deployment processes.</li>
-          <li>Built microservices into Docker images, facilitating containerization and deployment.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="ats-section">
-      <h2 class="ats-section-title">EDUCATION</h2>
-      <div class="ats-edu-item">
-        <div class="ats-job-header">
-          <strong>CHENNAI INSTITUTE OF TECHNOLOGY</strong> - Chennai, Tamil Nadu
-          <span class="ats-job-date">Graduated: January 2020</span>
-        </div>
-        <div><em>Bachelor of Engineering (BE) - Mechanical Engineering</em></div>
-      </div>
-      <div class="ats-edu-item" style="margin-top: 6px;">
-        <div class="ats-job-header">
-          <strong>IIPE LAXMI RAMAN HIGHER SECONDARY SCHOOL</strong> - Chennai, Tamil Nadu
-          <span class="ats-job-date">Completed: January 2016</span>
-        </div>
-        <div><em>HSLC - Bio-Math</em></div>
-      </div>
-    </section>
-
-    <section class="ats-section">
-      <h2 class="ats-section-title">CERTIFICATIONS</h2>
-      <p>
-        Microsoft Certified: Azure Fundamentals (Ongoing) | Containers and Kubernetes Essentials (IBM, Ongoing) | IBM MQ Developer Essentials (IBM, Ongoing) | Certified SolidWorks Associate (Dassault Systèmes, Ongoing) | Python Programming (Various Courses, Ongoing)
-      </p>
-    </section>
-
-    <section class="ats-section">
-      <h2 class="ats-section-title">ACTIVITIES & HONORS</h2>
-      <p>
-        <strong>Volunteer:</strong> Dr. APJ Youth Club (Local community empower campaigns and volunteer work).<br>
-        <strong>Open Source Contribution:</strong> Contributor to JsonQ (a utility library for querying JSON data in Python/Golang).
-      </p>
-    </section>
-  </div>
-
-  <script type="module" src="app.js"></script>
+  <script type="module" src="/src/main.js"></script>
 </body>
 </html>

@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSkillFilters();
   initClipboardUtility();
   initPrintEngine();
+  initContactButton();
   initLabLazy();
   initLogoInteraction();
 });
@@ -178,6 +179,49 @@ function initPrintEngine() {
   if (!printBtn) return;
   printBtn.addEventListener('click', () => {
     window.print();
+  });
+}
+
+function initContactButton() {
+  const contactBtn = document.getElementById('contact-me-btn');
+  if (!contactBtn) return;
+
+  const { profile } = getResumeData();
+  const email = profile.email;
+  const subject = 'Portfolio inquiry - Sriram Manikanth';
+  const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+  contactBtn.setAttribute('href', mailto);
+
+  const label = contactBtn.querySelector('.contact-me-label');
+  const icon = contactBtn.querySelector('i');
+  const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+
+  contactBtn.addEventListener('click', async (e) => {
+    if (!isTouchDevice) return;
+
+    e.preventDefault();
+
+    try {
+      await navigator.clipboard.writeText(email);
+      if (label) label.textContent = 'Email copied';
+      if (icon) {
+        icon.setAttribute('data-lucide', 'check');
+        refreshIcons();
+      }
+      contactBtn.classList.add('contact-copied');
+
+      setTimeout(() => {
+        if (label) label.textContent = 'Contact Me';
+        if (icon) {
+          icon.setAttribute('data-lucide', 'mail');
+          refreshIcons();
+        }
+        contactBtn.classList.remove('contact-copied');
+      }, 2500);
+    } catch {
+      window.location.href = mailto;
+      return;
+    }
   });
 }
 

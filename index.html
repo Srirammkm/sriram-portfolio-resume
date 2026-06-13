@@ -139,9 +139,14 @@
           </div>
         </div>
         <div class="profile-cta-row">
-          <a href="mailto:msriram0803@gmail.com" class="btn btn-primary profile-cta-btn">
-            <i data-lucide="mail"></i>
-            <span>Contact Me</span>
+          <a
+            href="mailto:msriram0803@gmail.com"
+            id="contact-me-btn"
+            class="btn btn-primary profile-cta-btn"
+            title="Email Sriram Manikanth"
+          >
+            <i data-lucide="mail" aria-hidden="true"></i>
+            <span class="contact-me-label">Contact Me</span>
           </a>
           <a href="https://github.com/Srirammkm" class="btn btn-secondary profile-cta-btn" target="_blank" rel="noopener noreferrer">
             <svg class="btn-icon-svg" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -288,9 +293,20 @@
             <p class="lab-promo-value">
               <strong>What I bring to your team:</strong> faster incident resolution, 50% faster emergency releases, FinOps-aware infra design, and platforms engineers actually adopt — because they live in Slack and Teams, not another portal.
             </p>
-            <button class="btn btn-primary launch-playground-btn" id="launch-playground-btn">
-              <i data-lucide="play"></i> Explore live demos
-            </button>
+            <div class="launch-playground-actions">
+              <button
+                class="btn btn-primary launch-playground-btn"
+                id="launch-playground-btn"
+                type="button"
+                aria-describedby="launch-playground-mobile-tooltip"
+              >
+                <i data-lucide="play"></i> Explore live demos
+              </button>
+              <p class="launch-playground-mobile-tooltip" id="launch-playground-mobile-tooltip" role="note">
+                <i data-lucide="monitor"></i>
+                <span>Live demos are built for desktop — open this site on a laptop or wider screen to explore the interactive playgrounds.</span>
+              </p>
+            </div>
           </div>
         </div>
 

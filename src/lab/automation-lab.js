@@ -5,9 +5,30 @@ export function initAutomationLab() {
   const fullscreenBtn = document.getElementById('lab-fullscreen-btn');
   const labContainer = document.getElementById('interactive-lab');
 
-  function toggleFullscreen() {
+  const MOBILE_DEMO_MQ = window.matchMedia('(max-width: 768px)');
+
+  function isMobileDemoDisabled() {
+    return MOBILE_DEMO_MQ.matches;
+  }
+
+  function updateLaunchPlaygroundAvailability() {
+    const disabled = isMobileDemoDisabled();
+    if (launchPlaygroundBtn) {
+      launchPlaygroundBtn.disabled = disabled;
+      launchPlaygroundBtn.setAttribute('aria-disabled', disabled ? 'true' : 'false');
+    }
+    if (disabled && labContainer?.classList.contains('fullscreen-active')) {
+      toggleFullscreen({ forceExit: true });
+    }
+  }
+
+  function toggleFullscreen(options = {}) {
     if (!labContainer) return;
     const isCurrentlyFullscreen = labContainer.classList.contains('fullscreen-active');
+
+    if (!isCurrentlyFullscreen && !options.forceExit && isMobileDemoDisabled()) {
+      return;
+    }
     
     if (isCurrentlyFullscreen) {
       labContainer.classList.remove('fullscreen-active');
@@ -29,7 +50,16 @@ export function initAutomationLab() {
   fullscreenBtn?.addEventListener('click', toggleFullscreen);
 
   const launchPlaygroundBtn = document.getElementById('launch-playground-btn');
-  launchPlaygroundBtn?.addEventListener('click', toggleFullscreen);
+  launchPlaygroundBtn?.addEventListener('click', () => {
+    if (isMobileDemoDisabled()) return;
+    toggleFullscreen();
+  });
+
+  updateLaunchPlaygroundAvailability();
+  MOBILE_DEMO_MQ.addEventListener('change', () => {
+    updateLaunchPlaygroundAvailability();
+    refreshIcons();
+  });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && labContainer?.classList.contains('fullscreen-active')) {
@@ -67,6 +97,7 @@ export function initAutomationLab() {
   const overviewNavTargets = document.querySelectorAll('.overview-card');
   overviewNavTargets.forEach(card => {
     card.addEventListener('click', () => {
+      if (isMobileDemoDisabled()) return;
       const targetProduct = card.getAttribute('data-card-product');
       if (targetProduct) {
         switchTab(targetProduct);

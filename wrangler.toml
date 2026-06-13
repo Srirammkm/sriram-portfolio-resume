@@ -1,0 +1,4 @@
+# Cloudflare Pages — static site deploy (see README deploy section)
+name = "sriram-portfolio-resume"
+compatibility_date = "2026-06-13"
+pages_build_output_dir = "./dist"

@@ -38,9 +38,13 @@ Output directory: `dist/`
 4. Build settings:
    - **Framework preset:** None
    - **Build command:** `npm run build`
-   - **Build output directory:** `dist`
-   - **Node version:** 20 (Environment variables → `NODE_VERSION=20` if needed)
+   - **Build output directory / Path:** `dist`
+   - **Deploy command:** `npx wrangler pages deploy` (not `npx wrangler deploy`)
+   - **Non-production deploy command:** `npx wrangler pages deploy` (not `wrangler versions upload`)
+   - **Node version:** 20 (`NODE_VERSION=20` env var if needed)
 5. Deploy. Every push to `master` triggers a new build.
+
+`wrangler.toml` in this repo sets `pages_build_output_dir = "./dist"` so the deploy command does not need the `dist` argument.
 
 ### Option B — Wrangler CLI
 

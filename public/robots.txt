@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://srirammanikanth.dev/sitemap.xml
+Sitemap: https://sriram.manikanth.info/sitemap.xml

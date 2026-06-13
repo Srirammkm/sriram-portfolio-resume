@@ -12,6 +12,10 @@ export function generateMarkdownResume() {
 
   let md = `${profile.name.toUpperCase()}\n`;
   md += `${profile.location} | ${phoneDigits} | ${profile.email}\n`;
+  if (data.site?.url) {
+    const portfolioShort = data.site.urlShort || data.site.url.replace(/^https?:\/\//, '').replace(/\/$/, '');
+    md += `Portfolio: ${portfolioShort}\n`;
+  }
   md += `LinkedIn: ${profile.linkedin.replace('https://www.linkedin.com/in/', 'www.linkedin.com/in/')}\n\n`;
 
   md += `SUMMARY\n${summary}\n\n`;
@@ -55,8 +59,9 @@ export function generateMarkdownResume() {
 export function renderAtsSheet(container) {
   if (!container) return;
 
-  const { profile, summary, skills, experience, education, certifications, honors } = data;
+  const { profile, summary, skills, experience, education, certifications, honors, site } = data;
   const phoneDigits = profile.phone.replace(/\D/g, '').replace(/^91/, '');
+  const portfolioShort = site?.urlShort || (site?.url ? site.url.replace(/^https?:\/\//, '').replace(/\/$/, '') : '');
 
   const skillLabels = {
     devops: 'DevOps & SRE',
@@ -72,6 +77,7 @@ export function renderAtsSheet(container) {
         ${profile.location} | ${phoneDigits} | <a href="mailto:${profile.email}">${profile.email}</a>
       </p>
       <p class="ats-links">
+        ${site?.url ? `Portfolio: <a href="${site.url}">${portfolioShort}</a><br>` : ''}
         LinkedIn: <a href="${profile.linkedin}">${profile.linkedinShort}</a>
       </p>
     </header>

@@ -1,6 +1,7 @@
 {
   "site": {
-    "url": "https://srirammanikanth.dev",
+    "url": "https://sriram.manikanth.info/",
+    "urlShort": "sriram.manikanth.info",
     "title": "Sriram Manikanth | Systems Architect & DevOps SRE",
     "description": "Portfolio of Sriram Manikanth — MTS at Salesforce. Interactive demos of NextOps, Cosmic AI, SSP, and Ops-Sage: Temporal workflows, ChatOps, LLM agents, and governed GitOps.",
     "author": "Sriram Manikanth",

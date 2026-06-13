@@ -2,7 +2,7 @@
 
 Interactive portfolio and ATS-friendly resume for Sriram Manikanth (MTS at Salesforce). Features live playground demos of NextOps, Cosmic AI, SSP, and Ops-Sage.
 
-**Live site:** [srirammanikanth.dev](https://srirammanikanth.dev) (configure your domain in Cloudflare)
+**Live site:** [sriram.manikanth.info](https://sriram.manikanth.info/)
 
 ## Stack
 

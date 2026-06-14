@@ -18,7 +18,7 @@
     "linkedin": "https://www.linkedin.com/in/sriram-manikanth-m-685323129",
     "linkedinShort": "linkedin.com/in/sriram"
   },
-  "summary": "Member of Technical Staff at Salesforce with 5.5+ years building production ops platforms. I architected NextOps (Slack ChatOps), Cosmic AI (manifest-driven LLM agents on Temporal), SSP (governed change execution), and Ops-Sage (alert auto-remediation) — replacing ticket queues with safe, auditable self-service. Deep in Kubernetes, Terraform, Temporal, and FinOps-aware platform design.",
+  "summary": "Curious, hands-on engineer who enjoys solving messy operational problems and making complex systems easier for people to run. I bring a calm, structured approach to incidents and change, communicate clearly with technical and non-technical stakeholders, and care about building trust through reliability and follow-through. Over 5.5 years I have grown from implementing automation to designing platforms that scale with the business—always learning, always improving how teams ship and operate software safely.",
   "skills": {
     "devops": "DevOps, CI/CD, GitOps, SRE, System Architecture, Incident Management, Cost Management Strategies, ChatOps, Incident Response, Disaster Recovery (DR).",
     "cloud": "Kubernetes, Docker, AWS, Azure, GCP, Ansible, Chef, IBM MQ.",

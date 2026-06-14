@@ -15,13 +15,17 @@
   <meta property="og:url" content="https://sriram.manikanth.info/">
   <meta property="og:title" content="Sriram Manikanth | Systems Architect & DevOps SRE">
   <meta property="og:description" content="Platform engineer who turns ops chaos into self-service. Interactive production-grade demos, 5.5+ years of reliability and automation.">
-  <meta property="og:image" content="https://sriram.manikanth.info/assets/profile.jpg">
+  <meta property="og:image" content="https://sriram.manikanth.info/assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Sriram Manikanth — Platform Engineer, DevOps, SRE. Interactive production ops portfolio.">
   <meta property="og:locale" content="en_US">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Sriram Manikanth | Systems Architect & DevOps SRE">
   <meta name="twitter:description" content="Interactive portfolio with live demos of production ops platforms built at Salesforce and Informatica.">
-  <meta name="twitter:image" content="https://sriram.manikanth.info/assets/profile.jpg">
+  <meta name="twitter:image" content="https://sriram.manikanth.info/assets/og-card.png">
+  <meta name="twitter:image:alt" content="Sriram Manikanth — Platform Engineer, DevOps, SRE. Interactive production ops portfolio.">
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/profile.jpg">
@@ -78,10 +82,18 @@
           <i data-lucide="copy"></i>
           <span class="btn-text">Copy ATS Text</span>
         </button>
-        <button id="print-btn" class="btn btn-primary" title="Print/Save as PDF" aria-label="Print/Save as PDF">
-          <i data-lucide="printer"></i>
-          <span class="btn-text">Print / Save PDF</span>
-        </button>
+        <a
+          href="/resume.pdf"
+          download="Sriram-Manikanth-Resume.pdf"
+          class="btn btn-primary"
+          id="download-pdf-btn"
+          data-resume-pdf
+          title="Download resume PDF"
+          aria-label="Download resume PDF"
+        >
+          <i data-lucide="file-down"></i>
+          <span class="btn-text">Download PDF</span>
+        </a>
       </div>
     </div>
   </nav>
@@ -288,9 +300,15 @@
             </li>
           </ul>
           <div class="recruiter-skim-actions">
-            <button type="button" class="btn btn-secondary btn-sm" id="recruiter-pdf-btn">
-              <i data-lucide="file-down"></i> Recruiter PDF
-            </button>
+            <a
+              href="/resume.pdf"
+              download="Sriram-Manikanth-Resume.pdf"
+              class="btn btn-secondary btn-sm"
+              id="recruiter-pdf-btn"
+              data-resume-pdf
+            >
+              <i data-lucide="file-down"></i> Download PDF
+            </a>
             <a href="mailto:msriram0803@gmail.com" class="btn btn-primary btn-sm" id="recruiter-contact-btn">
               <i data-lucide="mail"></i> Contact Me
             </a>
@@ -1918,9 +1936,15 @@
             <a href="mailto:msriram0803@gmail.com" class="btn btn-primary" id="hire-cta-contact">
               <i data-lucide="mail"></i> Contact Me
             </a>
-            <button type="button" class="btn btn-secondary" id="hire-cta-pdf">
-              <i data-lucide="file-text"></i> Download PDF
-            </button>
+            <a
+              href="/resume.pdf"
+              download="Sriram-Manikanth-Resume.pdf"
+              class="btn btn-secondary"
+              id="hire-cta-pdf"
+              data-resume-pdf
+            >
+              <i data-lucide="file-down"></i> Download PDF
+            </a>
             <a href="https://www.linkedin.com/in/sriram-manikanth-m-685323129" class="btn btn-secondary" id="hire-cta-linkedin" target="_blank" rel="noopener noreferrer">
               <i data-lucide="external-link"></i> LinkedIn
             </a>

@@ -11,18 +11,11 @@ export function initHiringUx() {
 function initRecruiterSkim() {
   const toggle = document.getElementById('recruiter-skim-toggle');
   const body = document.getElementById('recruiter-skim-body');
-  const pdfBtn = document.getElementById('recruiter-pdf-btn');
 
   wireMailtoLink(
     document.getElementById('recruiter-contact-btn'),
     'Portfolio inquiry - Sriram Manikanth',
   );
-
-  if (pdfBtn) {
-    pdfBtn.addEventListener('click', () => {
-      document.getElementById('print-btn')?.click();
-    });
-  }
 
   if (!toggle || !body) return;
 
@@ -43,7 +36,6 @@ function initMobileDemoLink() {
 }
 
 function initHireCtaPanel() {
-  const pdf = document.getElementById('hire-cta-pdf');
   const linkedin = document.getElementById('hire-cta-linkedin');
 
   wireMailtoLink(
@@ -57,12 +49,6 @@ function initHireCtaPanel() {
 
   if (linkedin) {
     linkedin.href = getResumeData().profile.linkedin;
-  }
-
-  if (pdf) {
-    pdf.addEventListener('click', () => {
-      document.getElementById('print-btn')?.click();
-    });
   }
 }
 

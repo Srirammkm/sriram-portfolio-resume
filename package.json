@@ -5,8 +5,9 @@
   "main": "index.html",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "node scripts/generate-assets.mjs og && vite build && node scripts/generate-assets.mjs pdf",
+    "preview": "vite preview",
+    "generate:assets": "node scripts/generate-assets.mjs og && vite build && node scripts/generate-assets.mjs pdf"
   },
   "keywords": [
     "portfolio",
@@ -18,6 +19,7 @@
   "author": "Sriram Manikanth",
   "license": "ISC",
   "devDependencies": {
+    "puppeteer": "^24.2.0",
     "vite": "^5.2.0"
   },
   "dependencies": {

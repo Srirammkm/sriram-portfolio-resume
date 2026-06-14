@@ -70,7 +70,10 @@ Cloudflare provides free SSL. Ensure **SSL/TLS** mode is **Full** or **Full (str
 |------|---------|
 | `content/resume.json` | Profile, summary, experience, skills — drives ATS view and copy text |
 | `content/resume.json` → `site.url` | Canonical URL, Open Graph, sitemap |
+| `content/resume.json` → `site.ogImage` | Social preview image path (`/assets/og-card.png`) |
 | `content/resume.json` → `site.analyticsToken` | Cloudflare Web Analytics beacon token (optional) |
+
+`npm run build` generates `public/assets/og-card.png` (social preview) and `dist/resume.pdf` (one-click download). Both are copied into `public/` for local dev after build.
 
 To enable Cloudflare Web Analytics: Dashboard → **Analytics** → **Web Analytics** → add site → copy token into `site.analyticsToken`.
 

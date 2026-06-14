@@ -1,7 +1,7 @@
 import { refreshIcons } from './icons.js';
 import { generateMarkdownResume, renderAtsSheet, applySiteMeta, getResumeData } from './resume.js';
 import { initHiringUx } from './hiring-ux.js';
-import { wireMailtoLink, wireRawMailtoAnchor } from './mailto.js';
+import { initResumePdfDownloads } from './download-pdf.js';
 
 // ==========================================================================
 // CORE APP ENGINE: PORTFOLIO INTERACTION, SIMULATORS & PRINT (AI & ROI EDITION)
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initViewSwitcher();
   initSkillFilters();
   initClipboardUtility();
-  initPrintEngine();
+  initResumePdfDownloads();
   initContactButton();
   initHiringUx();
   initLabLazy();
@@ -172,32 +172,6 @@ function initSkillFilters() {
   if (resetBtn) {
     resetBtn.addEventListener('click', clearFilters);
   }
-}
-
-// ==========================================================================
-// 4. PRINT UTILITY
-// ==========================================================================
-function initPrintEngine() {
-  const printBtn = document.getElementById('print-btn');
-  if (!printBtn) return;
-
-  let savedTitle = document.title;
-
-  printBtn.addEventListener('click', () => {
-    savedTitle = document.title;
-    const { profile, site } = getResumeData();
-    const portfolioLabel = site?.urlShort || '';
-    document.title = portfolioLabel
-      ? `${profile.name} - Resume | ${portfolioLabel}`
-      : `${profile.name} - Resume`;
-    document.body.classList.add('printable-active');
-    window.print();
-  });
-
-  window.addEventListener('afterprint', () => {
-    document.title = savedTitle;
-    document.body.classList.remove('printable-active');
-  });
 }
 
 function initContactButton() {

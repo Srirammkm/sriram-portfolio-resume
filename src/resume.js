@@ -153,4 +153,12 @@ export function applySiteMeta() {
 
   const ogUrl = document.querySelector('meta[property="og:url"]');
   if (ogUrl) ogUrl.content = site.url;
+
+  const baseUrl = site.url.replace(/\/$/, '');
+  const ogImagePath = site.ogImage || '/assets/og-card.png';
+  const ogImageUrl = ogImagePath.startsWith('http') ? ogImagePath : `${baseUrl}${ogImagePath}`;
+
+  document.querySelectorAll('meta[property="og:image"], meta[name="twitter:image"]').forEach((el) => {
+    el.content = ogImageUrl;
+  });
 }

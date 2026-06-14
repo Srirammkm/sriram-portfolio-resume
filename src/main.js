@@ -181,12 +181,21 @@ function initPrintEngine() {
   const printBtn = document.getElementById('print-btn');
   if (!printBtn) return;
 
+  let savedTitle = document.title;
+
   printBtn.addEventListener('click', () => {
+    savedTitle = document.title;
+    const { profile, site } = getResumeData();
+    const portfolioLabel = site?.urlShort || '';
+    document.title = portfolioLabel
+      ? `${profile.name} - Resume | ${portfolioLabel}`
+      : `${profile.name} - Resume`;
     document.body.classList.add('printable-active');
     window.print();
   });
 
   window.addEventListener('afterprint', () => {
+    document.title = savedTitle;
     document.body.classList.remove('printable-active');
   });
 }

@@ -72,23 +72,15 @@ export function renderAtsSheet(container) {
     collaboration: 'Collaboration',
   };
 
-  let html = '';
-
-  if (site?.url) {
-    html += `
-      <div class="ats-portfolio-print-strip ats-portfolio-print-strip--bottom">
-        Interactive portfolio: <a href="${site.url}">${site.url}</a>
-      </div>
-    `;
-  }
-
-  html += `
+  let html = `
     <header class="ats-header">
       <h1 class="ats-name">${profile.name.toUpperCase()}</h1>
+      <p class="ats-target-roles">Platform Engineer | DevOps Engineer | SRE | Systems Architect</p>
       <p class="ats-contact">
         ${profile.location} | ${phoneDigits} | <a href="mailto:${profile.email}">${profile.email}</a>
       </p>
       <p class="ats-links">
+        ${site?.url ? `Portfolio: <a href="${site.url}">${site.urlShort}</a><br>` : ''}
         LinkedIn: <a href="${profile.linkedin}">${profile.linkedinShort}</a>
       </p>
     </header>

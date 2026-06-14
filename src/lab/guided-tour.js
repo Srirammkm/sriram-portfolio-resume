@@ -16,14 +16,14 @@ export function initGuidedTour(labApi) {
   const steps = [
     {
       title: 'Interactive replicas of production systems',
-      text: 'These demos mirror platforms I shipped in production — not mockups. You are safe: no real cloud is connected.',
+      text: 'These demos mirror platforms I shipped in production, not mockups. You are safe: no real cloud is connected.',
       run: () => {
         labApi.switchTab('overview');
         hideTourEndCta();
       },
     },
     {
-      title: 'NextOps — Slack-native self-service',
+      title: 'NextOps: Slack-native self-service',
       text: 'Engineers run production operations from chat with live RBAC, Temporal workflows, and a full audit trail.',
       run: () => {
         labApi.switchTab('slackops');
@@ -33,7 +33,7 @@ export function initGuidedTour(labApi) {
     },
     {
       title: 'Run a runbook action',
-      text: 'Watch a catalog action execute with status tracking — the same pattern used for long-running prod workflows.',
+      text: 'Watch a catalog action execute with status tracking, the same pattern used for long-running prod workflows.',
       run: () => {
         labApi.switchTab('slackops');
         labApi.activateProductSubpane('slackops', 'try-live');

@@ -3,7 +3,7 @@
     "url": "https://sriram.manikanth.info/",
     "urlShort": "sriram.manikanth.info",
     "title": "Sriram Manikanth | Systems Architect & DevOps SRE",
-    "description": "Sriram Manikanth — platform engineer who turns ops chaos into self-service. 5.5+ years building reliable automation, safer change, and interactive production-grade demos.",
+    "description": "Sriram Manikanth, platform engineer who turns ops chaos into self-service. 5.5+ years building reliable automation, safer change, and interactive production-grade demos.",
     "author": "Sriram Manikanth",
     "github": "https://github.com/Srirammkm",
     "githubRepo": "https://github.com/Srirammkm/sriram-portfolio-resume",
@@ -18,7 +18,7 @@
     "linkedin": "https://www.linkedin.com/in/sriram-manikanth-m-685323129",
     "linkedinShort": "linkedin.com/in/sriram"
   },
-  "summary": "Curious, hands-on engineer who enjoys solving messy operational problems and making complex systems easier for people to run. I bring a calm, structured approach to incidents and change, communicate clearly with technical and non-technical stakeholders, and care about building trust through reliability and follow-through. Over 5.5 years I have grown from implementing automation to designing platforms that scale with the business—always learning, always improving how teams ship and operate software safely.",
+  "summary": "Curious, hands-on engineer who enjoys solving messy operational problems and making complex systems easier for people to run. I bring a calm, structured approach to incidents and change, communicate clearly with technical and non-technical stakeholders, and care about building trust through reliability and follow-through. Over 5.5 years I have grown from implementing automation to designing platforms that scale with the business, always learning and improving how teams ship and operate software safely.",
   "skills": {
     "devops": "DevOps, CI/CD, GitOps, SRE, System Architecture, Incident Management, Cost Management Strategies, ChatOps, Incident Response, Disaster Recovery (DR).",
     "cloud": "Kubernetes, Docker, AWS, Azure, GCP, Ansible, Chef, IBM MQ.",
@@ -43,7 +43,7 @@
       "dates": "April 2024 – March 2026",
       "bullets": [
         "Designed and developed a scalable AI Agent Orchestration Platform, incorporating dynamic task chaining, parallel execution, intelligent data flow, and a central agent knowledge layer for improved automation accuracy and accelerated multi-step workflows.",
-        "Built Ops-Sage, an on-call alert automation system that validates incoming alerts against configured runbooks and executes remediations through the governed portal — reducing pager load for repeat failure patterns.",
+        "Built Ops-Sage, an on-call alert automation system that validates incoming alerts against configured runbooks and executes remediations through the governed portal, reducing pager load for repeat failure patterns.",
         "Developed multiple Microsoft Teams bots to support team operations and streamline incident management processes.",
         "Created a self-service portal using Python and Temporal, enabling teams to independently run scripts and perform operational tasks, reducing reliance on DevOps/Platform support.",
         "Automated Emergency Bug Fix (EBF) deployments, optimizing the release process and minimizing manual intervention during critical releases.",

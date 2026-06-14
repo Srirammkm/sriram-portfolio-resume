@@ -1335,7 +1335,7 @@ export function initAutomationLab() {
         'Execute: SSP workflow wf-heap-scale (JVM multiplier 1.5x)',
         'Notify: Slack summary posted to #cloudstack-ops-alerts',
       ],
-      result: 'Complete — heap reduced to 45% baseline. On-call not paged.',
+      result: 'Complete: heap reduced to 45% baseline. On-call not paged.',
       actionLog: {
         alert: 'JVM heap utilization above 90%',
         action: 'heap-scale-v2',
@@ -1352,7 +1352,7 @@ export function initAutomationLab() {
         'Execute: rolling restart auth-service pods',
         'Notify: latency p99 back under 120ms',
       ],
-      result: 'Complete — connection pool scaled. On-call not paged.',
+      result: 'Complete: connection pool scaled. On-call not paged.',
       actionLog: {
         alert: 'API latency p99 &gt; 2500ms',
         action: 'conn-pool-scale',
@@ -1368,7 +1368,7 @@ export function initAutomationLab() {
         'Execute: log rotation job triggered on worker pool',
         'Notify: disk usage reduced to 62%',
       ],
-      result: 'Complete — log sweep finished. On-call not paged.',
+      result: 'Complete: log sweep finished. On-call not paged.',
       actionLog: {
         alert: 'Disk usage &gt; 85% on worker pool',
         action: 'log-rotate-sweep',

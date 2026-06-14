@@ -3916,6 +3916,10 @@ body.printable-active .ats-container {
   margin-bottom: 15px;
 }
 
+.ats-portfolio-print-strip {
+  display: none;
+}
+
 .ats-name {
   font-size: 20pt;
   font-weight: bold;
@@ -4538,7 +4542,7 @@ body.printable-active .ats-container {
   #reset-skills-btn,
   .company-logo-wrapper,
   .project-company-logo,
-  footer {
+  body > footer {
     display: none !important;
   }
 
@@ -4577,7 +4581,43 @@ body.printable-active .ats-container {
 
   @page {
     size: A4 portrait;
-    margin: 0.6in 0.6in 0.6in 0.6in;
+    margin: 0.75in 0.6in 0.75in 0.6in;
+  }
+
+  .ats-portfolio-print-strip {
+    display: block !important;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    padding: 5px 0.6in;
+    text-align: center;
+    font-size: 8pt;
+    background: #ffffff !important;
+    border-bottom: 1px solid #000000;
+  }
+
+  .ats-portfolio-print-strip a {
+    color: #000000 !important;
+    font-weight: 700;
+    text-decoration: underline !important;
+  }
+
+  .ats-portfolio-print-strip--bottom {
+    bottom: 0;
+    border-bottom: none;
+    border-top: 1px solid #000000;
+  }
+
+  .ats-container {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0.35in 0 0.35in 0 !important;
+    border: none !important;
+    font-size: 10.5pt !important;
+    line-height: 1.4 !important;
   }
 
   .ats-header {
@@ -6751,6 +6791,23 @@ a.profile-cta-btn.btn-secondary:hover {
   font-weight: 600;
   color: var(--text-secondary);
   background: var(--bg-widget);
+}
+
+.trust-logo-item img {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.trust-logo-mark--thoughtworks {
+  width: 34px;
+  height: 16px;
+}
+
+.trust-logo-item img[src*="tcs.svg"] {
+  width: 22px;
+  height: 16px;
 }
 
 .trust-logo-text {

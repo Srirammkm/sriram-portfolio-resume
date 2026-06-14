@@ -1,6 +1,7 @@
 import { refreshIcons } from './icons.js';
 import { generateMarkdownResume, renderAtsSheet, applySiteMeta, getResumeData } from './resume.js';
 import { initHiringUx } from './hiring-ux.js';
+import { wireMailtoLink, wireRawMailtoAnchor } from './mailto.js';
 
 // ==========================================================================
 // CORE APP ENGINE: PORTFOLIO INTERACTION, SIMULATORS & PRINT (AI & ROI EDITION)
@@ -179,52 +180,25 @@ function initSkillFilters() {
 function initPrintEngine() {
   const printBtn = document.getElementById('print-btn');
   if (!printBtn) return;
+
   printBtn.addEventListener('click', () => {
+    document.body.classList.add('printable-active');
     window.print();
+  });
+
+  window.addEventListener('afterprint', () => {
+    document.body.classList.remove('printable-active');
   });
 }
 
 function initContactButton() {
-  const contactBtn = document.getElementById('contact-me-btn');
-  if (!contactBtn) return;
-
-  const { profile } = getResumeData();
-  const email = profile.email;
-  const subject = 'Portfolio inquiry - Sriram Manikanth';
-  const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
-  contactBtn.setAttribute('href', mailto);
-
-  const label = contactBtn.querySelector('.contact-me-label');
-  const icon = contactBtn.querySelector('i');
-  const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
-
-  contactBtn.addEventListener('click', async (e) => {
-    if (!isTouchDevice) return;
-
-    e.preventDefault();
-
-    try {
-      await navigator.clipboard.writeText(email);
-      if (label) label.textContent = 'Email copied';
-      if (icon) {
-        icon.setAttribute('data-lucide', 'check');
-        refreshIcons();
-      }
-      contactBtn.classList.add('contact-copied');
-
-      setTimeout(() => {
-        if (label) label.textContent = 'Contact Me';
-        if (icon) {
-          icon.setAttribute('data-lucide', 'mail');
-          refreshIcons();
-        }
-        contactBtn.classList.remove('contact-copied');
-      }, 2500);
-    } catch {
-      window.location.href = mailto;
-      return;
-    }
-  });
+  wireMailtoLink(
+    document.getElementById('contact-me-btn'),
+    'Portfolio inquiry - Sriram Manikanth',
+  );
+  wireRawMailtoAnchor(
+    document.querySelector('.profile-contact-list a[href^="mailto:"]'),
+  );
 }
 
 // ==========================================================================

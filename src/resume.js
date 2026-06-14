@@ -11,6 +11,9 @@ export function generateMarkdownResume() {
   const phoneDigits = profile.phone.replace(/\D/g, '').replace(/^91/, '');
 
   let md = `${profile.name.toUpperCase()}\n`;
+  if (data.site?.url) {
+    md += `INTERACTIVE PORTFOLIO: ${data.site.url}\n`;
+  }
   md += `${profile.location} | ${phoneDigits} | ${profile.email}\n`;
   if (data.site?.url) {
     const portfolioShort = data.site.urlShort || data.site.url.replace(/^https?:\/\//, '').replace(/\/$/, '');
@@ -61,7 +64,6 @@ export function renderAtsSheet(container) {
 
   const { profile, summary, skills, experience, education, certifications, honors, site } = data;
   const phoneDigits = profile.phone.replace(/\D/g, '').replace(/^91/, '');
-  const portfolioShort = site?.urlShort || (site?.url ? site.url.replace(/^https?:\/\//, '').replace(/\/$/, '') : '');
 
   const skillLabels = {
     devops: 'DevOps & SRE',
@@ -70,14 +72,23 @@ export function renderAtsSheet(container) {
     collaboration: 'Collaboration',
   };
 
-  let html = `
+  let html = '';
+
+  if (site?.url) {
+    html += `
+      <div class="ats-portfolio-print-strip ats-portfolio-print-strip--bottom">
+        Interactive portfolio: <a href="${site.url}">${site.url}</a>
+      </div>
+    `;
+  }
+
+  html += `
     <header class="ats-header">
       <h1 class="ats-name">${profile.name.toUpperCase()}</h1>
       <p class="ats-contact">
         ${profile.location} | ${phoneDigits} | <a href="mailto:${profile.email}">${profile.email}</a>
       </p>
       <p class="ats-links">
-        ${site?.url ? `Portfolio: <a href="${site.url}">${portfolioShort}</a><br>` : ''}
         LinkedIn: <a href="${profile.linkedin}">${profile.linkedinShort}</a>
       </p>
     </header>

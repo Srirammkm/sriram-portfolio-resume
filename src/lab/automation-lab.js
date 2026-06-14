@@ -1,4 +1,6 @@
 import { refreshIcons } from '../icons.js';
+import { initGuidedTour } from './guided-tour.js';
+import { hideTourEndCta } from '../hiring-ux.js';
 
 export function initAutomationLab() {
   // === Fullscreen Immersive Mode Controller ===
@@ -33,6 +35,8 @@ export function initAutomationLab() {
     if (isCurrentlyFullscreen) {
       labContainer.classList.remove('fullscreen-active');
       document.body.classList.remove('lab-fullscreen-open');
+      document.getElementById('lab-guided-tour')?.classList.add('hidden');
+      hideTourEndCta();
       if (fullscreenBtn) {
         fullscreenBtn.innerHTML = '<i data-lucide="maximize-2"></i> <span>Fullscreen Mode</span>';
       }
@@ -50,9 +54,12 @@ export function initAutomationLab() {
   fullscreenBtn?.addEventListener('click', toggleFullscreen);
 
   const launchPlaygroundBtn = document.getElementById('launch-playground-btn');
+  let guidedTourController = null;
+
   launchPlaygroundBtn?.addEventListener('click', () => {
     if (isMobileDemoDisabled()) return;
     toggleFullscreen();
+    setTimeout(() => guidedTourController?.startIfNeeded(), 400);
   });
 
   updateLaunchPlaygroundAvailability();
@@ -85,6 +92,28 @@ export function initAutomationLab() {
       pane.classList.toggle('active', active);
     });
   }
+
+  function activateProductSubpane(product, subpaneId) {
+    const pane = document.getElementById(`pane-${product}`);
+    if (!pane) return;
+    pane.querySelectorAll('.product-tab-btn').forEach((btn) => {
+      btn.classList.toggle('active', btn.getAttribute('data-subtab') === subpaneId);
+    });
+    pane.querySelectorAll('.product-subpane').forEach((sp) => {
+      sp.classList.toggle('active', sp.getAttribute('data-subpane-id') === subpaneId);
+    });
+  }
+
+  function switchSlackConsoleTab(tabId) {
+    const btn = document.querySelector(`#pane-slackops [data-slack-tab="${tabId}"]`);
+    btn?.click();
+  }
+
+  guidedTourController = initGuidedTour({
+    switchTab,
+    activateProductSubpane,
+    switchSlackConsoleTab,
+  });
 
   labNavItems.forEach(item => {
     item.addEventListener('click', () => {

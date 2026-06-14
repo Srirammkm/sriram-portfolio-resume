@@ -3,7 +3,7 @@
     "url": "https://sriram.manikanth.info/",
     "urlShort": "sriram.manikanth.info",
     "title": "Sriram Manikanth | Systems Architect & DevOps SRE",
-    "description": "Portfolio of Sriram Manikanth — MTS at Salesforce. Interactive demos of NextOps, Cosmic AI, SSP, and Ops-Sage: Temporal workflows, ChatOps, LLM agents, and governed GitOps.",
+    "description": "Sriram Manikanth — platform engineer who turns ops chaos into self-service. 5.5+ years building reliable automation, safer change, and interactive production-grade demos.",
     "author": "Sriram Manikanth",
     "github": "https://github.com/Srirammkm",
     "githubRepo": "https://github.com/Srirammkm/sriram-portfolio-resume",
@@ -126,7 +126,7 @@
       "title": "Open Source Contribution",
       "org": "JsonQ",
       "description": "Contributor to JsonQ (a utility library for querying JSON data in Python/Golang).",
-      "url": "https://github.com/Srirammkm"
+      "url": "https://pypi.org/project/jsonQ/"
     }
   ],
   "projects": [

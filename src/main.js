@@ -1,5 +1,6 @@
 import { refreshIcons } from './icons.js';
 import { generateMarkdownResume, renderAtsSheet, applySiteMeta, getResumeData } from './resume.js';
+import { initHiringUx } from './hiring-ux.js';
 
 // ==========================================================================
 // CORE APP ENGINE: PORTFOLIO INTERACTION, SIMULATORS & PRINT (AI & ROI EDITION)
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initClipboardUtility();
   initPrintEngine();
   initContactButton();
+  initHiringUx();
   initLabLazy();
   initLogoInteraction();
 });

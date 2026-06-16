@@ -2,6 +2,7 @@ import { refreshIcons } from './icons.js';
 import { generateMarkdownResume, renderAtsSheet, applySiteMeta, getResumeData } from './resume.js';
 import { initHiringUx } from './hiring-ux.js';
 import { initResumePdfDownloads } from './download-pdf.js';
+import { wireMailtoLink, wireRawMailtoAnchor } from './mailto.js';
 
 // ==========================================================================
 // CORE APP ENGINE: PORTFOLIO INTERACTION, SIMULATORS & PRINT (AI & ROI EDITION)
@@ -281,5 +282,7 @@ function initLogoInteraction() {
     }
   };
 
-  runTypingCycle();
+  runTypingCycle().catch((err) => {
+    console.error('Logo status animation failed:', err);
+  });
 }

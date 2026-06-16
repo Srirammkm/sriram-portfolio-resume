@@ -1,6 +1,6 @@
 /**
- * Build-time assets: OG social card (PNG) and ATS resume (PDF).
- * Usage: node scripts/generate-assets.mjs og | pdf
+ * Build-time assets: OG social card, LinkedIn banner (PNG), and ATS resume (PDF).
+ * Usage: node scripts/generate-assets.mjs og | pdf | linkedin
  */
 import fs from 'fs';
 import path from 'path';
@@ -13,6 +13,7 @@ const root = path.join(__dirname, '..');
 const publicAssetsDir = path.join(root, 'public', 'assets');
 const distDir = path.join(root, 'dist');
 const ogCardHtml = path.join(__dirname, 'og-card.html');
+const linkedinBannerHtml = path.join(__dirname, 'linkedin-banner.html');
 
 const PREVIEW_PORT = 4188;
 
@@ -46,19 +47,38 @@ function copyFile(src, dest) {
   fs.copyFileSync(src, dest);
 }
 
-async function generateOgCard() {
-  ensureDir(publicAssetsDir);
-  const outPublic = path.join(publicAssetsDir, 'og-card.png');
+async function screenshotHtml(htmlPath, outPath, width, height, scale = 1) {
   const browser = await launchBrowser();
   try {
     const page = await browser.newPage();
-    await page.setViewport({ width: 1200, height: 630, deviceScaleFactor: 1 });
-    await page.goto(`file://${ogCardHtml}`, { waitUntil: 'networkidle0' });
-    await page.screenshot({ path: outPublic, type: 'png' });
-    console.log(`OG card: ${outPublic}`);
+    await page.setViewport({ width, height, deviceScaleFactor: scale });
+    await page.goto(`file://${htmlPath}`, { waitUntil: 'networkidle0' });
+    await page.screenshot({ path: outPath, type: 'png' });
+    const pxW = width * scale;
+    const pxH = height * scale;
+    console.log(`Asset: ${outPath} (${pxW}×${pxH}px)`);
   } finally {
     await browser.close();
   }
+}
+
+async function generateOgCard() {
+  ensureDir(publicAssetsDir);
+  await screenshotHtml(
+    ogCardHtml,
+    path.join(publicAssetsDir, 'og-card.png'),
+    1200,
+    630,
+  );
+}
+
+async function generateLinkedinBanner() {
+  ensureDir(publicAssetsDir);
+  const outPath = path.join(publicAssetsDir, 'linkedin-banner.png');
+  await screenshotHtml(linkedinBannerHtml, outPath, 1584, 396, 2);
+
+  const uhdPath = path.join(publicAssetsDir, 'linkedin-banner-uhd.png');
+  await screenshotHtml(linkedinBannerHtml, uhdPath, 1584, 396, 3);
 }
 
 async function generateResumePdf() {
@@ -102,9 +122,12 @@ const mode = process.argv[2];
 
 if (mode === 'og') {
   await generateOgCard();
+  await generateLinkedinBanner();
+} else if (mode === 'linkedin') {
+  await generateLinkedinBanner();
 } else if (mode === 'pdf') {
   await generateResumePdf();
 } else {
-  console.error('Usage: node scripts/generate-assets.mjs og|pdf');
+  console.error('Usage: node scripts/generate-assets.mjs og|pdf|linkedin');
   process.exit(1);
 }
